@@ -1,3 +1,15 @@
+
+<h1>
+    My NeoVim Config
+</h1>
+
+## Credit
+Forked off AstroNvim + Et. Al to random people on stack overflow with the same problems as me.
+
+## Some Notes about stuff not working
+Some of the stuff I have in my neovim config *may* not actually work just by installing this branch. This is probably because it's something I've got configured in my `~/.vim` folder. Notable mention here is snippets. I'm sure at some point I'll get around to fixing that but for now, if it doesn't work, feel free to comment stuff out that's breaking anything since it's probably not that important anyways.
+
+
 <div align="center" id="madewithlua">
     <img src="https://astronvim.github.io/img/logo/astronvim.svg" width="110", height="100">
 </div>
