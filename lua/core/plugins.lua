@@ -196,6 +196,25 @@ local astro_plugins = {
     end,
   },
 
+  -- Vimtex - Dependency for tex.snippets
+  ["lervag/vimtex"] = {
+    module = "vimtex",
+    event = "VimEnter",
+    config = function()
+      require "configs.vimtex"
+    end,
+  },
+
+
+  -- UltiSnips
+  ["SirVer/ultisnips"] = {
+    module = "ultisnips",
+    event = "VimEnter",
+    config = function()
+      require "configs.ultisnips"
+    end,
+  },
+
   -- Fuzzy finder
   ["nvim-telescope/telescope.nvim"] = {
     cmd = "Telescope",
@@ -265,6 +284,13 @@ local astro_plugins = {
     end,
   },
 
+  -- ["SirVer/ultisnips"] = {
+  --   event = { "BufRead", "BufNewFile", "BufWritePost" },
+  --   config = function ()
+  --     require
+  --   end,
+  -- },
+
   -- Indentation
   ["lukas-reineke/indent-blankline.nvim"] = {
     event = "BufRead",
@@ -283,7 +309,7 @@ local astro_plugins = {
 
   -- Smooth scrolling
   ["declancm/cinnamon.nvim"] = {
-    event = { "BufRead", "BufNewFile" },
+    event = { "BufRead", "BufNewFile"},
     config = function()
       require "configs.cinnamon"
     end,

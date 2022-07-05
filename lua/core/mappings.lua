@@ -1,6 +1,6 @@
 local is_available = astronvim.is_available
 
-local maps = { n = {}, v = {}, t = {}, [""] = {} }
+local maps = { n = {}, v = {}, t = {}, [""] = {}, i = {} }
 
 maps[""]["<Space>"] = "<Nop>"
 
@@ -25,6 +25,10 @@ maps.n["gx"] = {
 maps.n["<C-s>"] = { "<cmd>w!<cr>", desc = "Force write" }
 maps.n["<C-q>"] = { "<cmd>q!<cr>", desc = "Force quit" }
 maps.n["Q"] = "<Nop>"
+
+-- Movements like MacOS
+maps.i["<c-f>"] = { "<Right>" }
+maps.i["<c-b>"] = { "<Left>" }
 
 -- Packer
 maps.n["<leader>pc"] = { "<cmd>PackerCompile<cr>", desc = "Packer Compile" }
@@ -155,30 +159,30 @@ end
 -- Smart Splits
 if is_available "smart-splits.nvim" then
   -- Better window navigation
-  maps.n["<C-h>"] = {
-    function()
-      require("smart-splits").move_cursor_left()
-    end,
-    desc = "Move to left split",
-  }
-  maps.n["<C-j>"] = {
-    function()
-      require("smart-splits").move_cursor_down()
-    end,
-    desc = "Move to below split",
-  }
-  maps.n["<C-k>"] = {
-    function()
-      require("smart-splits").move_cursor_up()
-    end,
-    desc = "Move to above split",
-  }
-  maps.n["<C-l>"] = {
-    function()
-      require("smart-splits").move_cursor_right()
-    end,
-    desc = "Move to right split",
-  }
+  -- maps.n["<C-h>"] = {
+  --   function()
+  --     require("smart-splits").move_cursor_left()
+  --   end,
+  --   desc = "Move to left split",
+  -- }
+  -- maps.n["<C-j>"] = {
+  --   function()
+  --     require("smart-splits").move_cursor_down()
+  --   end,
+  --   desc = "Move to below split",
+  -- }
+  -- maps.n["<C-k>"] = {
+  --   function()
+  --     require("smart-splits").move_cursor_up()
+  --   end,
+  --   desc = "Move to above split",
+  -- }
+  -- maps.n["<C-l>"] = {
+  --   function()
+  --     require("smart-splits").move_cursor_right()
+  --   end,
+  --   desc = "Move to right split",
+  -- }
 
   -- Resize with arrows
   maps.n["<C-Up>"] = {
@@ -206,10 +210,10 @@ if is_available "smart-splits.nvim" then
     desc = "Resize split right",
   }
 else
-  maps.n["<C-h>"] = { "<C-w>h", desc = "Move to left split" }
-  maps.n["<C-j>"] = { "<C-w>j", desc = "Move to below split" }
-  maps.n["<C-k>"] = { "<C-w>k", desc = "Move to above split" }
-  maps.n["<C-l>"] = { "<C-w>l", desc = "Move to right split" }
+  -- maps.n["<C-h>"] = { "<C-w>h", desc = "Move to left split" }
+  -- maps.n["<C-j>"] = { "<C-w>j", desc = "Move to below split" }
+  -- maps.n["<C-k>"] = { "<C-w>k", desc = "Move to above split" }
+  -- maps.n["<C-l>"] = { "<C-w>l", desc = "Move to right split" }
   maps.n["<C-Up>"] = { "<cmd>resize -2<CR>", desc = "Resize split up" }
   maps.n["<C-Down>"] = { "<cmd>resize +2<CR>", desc = "Resize split down" }
   maps.n["<C-Left>"] = { "<cmd>vertical resize -2<CR>", desc = "Resize split left" }
@@ -257,7 +261,7 @@ if is_available "telescope.nvim" then
     end,
     desc = "Git commits",
   }
-  maps.n["<leader>ff"] = {
+  maps.n["<c-p>"] = {
     function()
       require("telescope.builtin").find_files()
     end,
@@ -406,7 +410,8 @@ if is_available "toggleterm.nvim" then
     end,
     desc = "ToggleTerm lazygit",
   }
-  maps.n["<leader>tf"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" }
+  -- maps.n["<leader>tf"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" }
+  maps.n["<C-J>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" }
   maps.n["<leader>th"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" }
   maps.n["<leader>tv"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" }
 end
@@ -424,3 +429,4 @@ maps.t["<C-k>"] = { "<c-\\><c-n><c-w>k", desc = "Terminal up window navigation" 
 maps.t["<C-l>"] = { "<c-\\><c-n><c-w>l", desc = "Terminal right window naviation" }
 
 astronvim.set_mappings(astronvim.user_plugin_opts("mappings", maps))
+
