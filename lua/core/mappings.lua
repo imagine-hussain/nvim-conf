@@ -261,6 +261,12 @@ if is_available "telescope.nvim" then
     end,
     desc = "Git commits",
   }
+  maps.n["<leader>ff"] = {
+    function()
+      require("telescope.builtin").find_files()
+    end,
+    desc = "Search files",
+  }
   maps.n["<c-p>"] = {
     function()
       require("telescope.builtin").find_files()

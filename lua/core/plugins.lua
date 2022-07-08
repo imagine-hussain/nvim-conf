@@ -323,6 +323,15 @@ local astro_plugins = {
     end,
   },
 
+  --
+  -- Colorschemes
+  --
+  ["sainnhe/gruvbox-material"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
+
   -- Get extra JSON schemas
   ["b0o/SchemaStore.nvim"] = { module = "schemastore" },
 
