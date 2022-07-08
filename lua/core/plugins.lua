@@ -344,6 +344,13 @@ local astro_plugins = {
       require "configs.session_manager"
     end,
   },
+
+  -- Wiki
+  ["vimwiki/vimwiki"] = {
+    config = function()
+      require "configs.vimwiki"
+    end,
+  }
 }
 
 if astronvim.updater.snapshot then
