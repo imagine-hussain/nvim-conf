@@ -350,6 +350,13 @@ local astro_plugins = {
     config = function()
       require "configs.vimwiki"
     end,
+  },
+
+  -- Copilot
+  ["github/copilot.vim"] = {
+    config = function ()
+      require "configs.copilot"
+    end
   }
 }
 
