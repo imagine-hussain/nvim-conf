@@ -308,10 +308,16 @@ local astro_plugins = {
   },
 
   -- Smooth scrolling
-  ["declancm/cinnamon.nvim"] = {
+  -- ["declancm/cinnamon.nvim"] = {
+  --   event = { "BufRead", "BufNewFile"},
+  --   config = function()
+  --     require "configs.cinnamon"
+  --   end,
+  -- },
+  ["karb94/neoscroll.nvim"] = {
     event = { "BufRead", "BufNewFile"},
     config = function()
-      require "configs.cinnamon"
+      require "configs.neoscroll"
     end,
   },
 
