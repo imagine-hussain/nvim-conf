@@ -2,8 +2,8 @@
 
 -- Material Gruvox
 vim.cmd('let g:gruvbox_material_foreground="material"')
-vim.cmd('let g:gruvbox_material_background="medium"')
-vim.cmd('set background=dark')
+vim.cmd('let g:gruvbox_material_background="hard"')
+-- vim.cmd('set background=dark')
 
 -- Github
 -- require("github-theme").setup({
@@ -19,6 +19,7 @@ vim.cmd('set background=dark')
 -- })
 
 -- set the actual theme
+-- vim.cmd("colorscheme gruvbox-material")
 vim.cmd("colorscheme gruvbox-material")
 
 

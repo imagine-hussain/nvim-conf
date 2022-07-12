@@ -240,6 +240,13 @@ local astro_plugins = {
       require "configs.gitsigns"
     end,
   },
+  -- Git 
+  ["pwntester/octo.nvim"] = {
+    event = "BufEnter",
+    config = function()
+      require "configs.octo"
+    end,
+  },
 
   -- Start screen
   ["goolord/alpha-nvim"] = {
