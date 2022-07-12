@@ -337,6 +337,16 @@ local astro_plugins = {
       require "configs.colors"
     end,
   },
+  ["projekt0n/github-nvim-theme"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
+  ["mangeshrex/everblush.vim"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
 
   -- Get extra JSON schemas
   ["b0o/SchemaStore.nvim"] = { module = "schemastore" },

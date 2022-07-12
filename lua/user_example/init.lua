@@ -18,7 +18,7 @@ local config = {
   },
 
   -- Set colorscheme
-  colorscheme = "gruvbox-material",
+  colorscheme = "default_theme",
 
   -- set vim options here (vim.<first_key>.<second_key> =  value)
   options = {
@@ -247,7 +247,5 @@ local config = {
     -- }
   end,
 }
--- Set colorscheme
-colorscheme = "gruvbox-material",
 
 return config
