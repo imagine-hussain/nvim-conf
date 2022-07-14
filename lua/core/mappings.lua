@@ -398,12 +398,12 @@ if is_available "toggleterm.nvim" then
     end,
     desc = "ToggleTerm NCDU",
   }
-  maps.n["<leader>tt"] = {
-    function()
-      toggle_term_cmd "htop"
-    end,
-    desc = "ToggleTerm htop",
-  }
+  -- maps.n["<leader>tt"] = {
+  --   function()
+  --     toggle_term_cmd "htop"
+  --   end,
+  --   desc = "ToggleTerm htop",
+  -- }
   maps.n["<leader>tp"] = {
     function()
       toggle_term_cmd "python"
@@ -416,7 +416,8 @@ if is_available "toggleterm.nvim" then
     end,
     desc = "ToggleTerm lazygit",
   }
-  -- maps.n["<leader>tf"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" }
+  maps.n["<leader>tt"] = { "<cmd>ToggleTerm<cr>" }
+  maps.n["<leader>tf"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" }
   maps.n["<C-J>"] = { "<cmd>ToggleTerm direction=float<cr>", desc = "ToggleTerm float" }
   maps.n["<leader>th"] = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", desc = "ToggleTerm horizontal split" }
   maps.n["<leader>tv"] = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", desc = "ToggleTerm vertical split" }
