@@ -247,6 +247,13 @@ local astro_plugins = {
       require "configs.octo"
     end,
   },
+  -- Git (for toggle term lazygit)
+  ["jesseduffield/lazygit"] = {
+    event = "BufEnter",
+    config = function()
+      require "configs.lazygit"
+    end,
+  },
 
   -- Start screen
   ["goolord/alpha-nvim"] = {
