@@ -181,8 +181,8 @@ local astro_plugins = {
 
   -- LSP symbols
   ["stevearc/aerial.nvim"] = {
-    module = "aerial",
-    cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
+    -- module = "aerial",
+    -- cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
     config = function()
       require "configs.aerial"
     end,
@@ -204,7 +204,12 @@ local astro_plugins = {
       require "configs.vimtex"
     end,
   },
-
+  -- -- Conceal for tex
+  -- ["KeitaNakamura/tex-conceal.vim"] = {
+  --   config = function()
+  --     require "configs.tex-conceal"
+  --   end,
+  -- },
 
   -- UltiSnips
   ["SirVer/ultisnips"] = {
@@ -387,7 +392,14 @@ local astro_plugins = {
     config = function ()
       require "configs.copilot"
     end
-  }
+  },
+
+  -- Discord Integration
+  ["andweeb/presence.nvim"] = {
+    config = function ()
+      require "configs.discord"
+    end
+  },
 }
 
 if astronvim.updater.snapshot then

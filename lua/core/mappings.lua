@@ -376,6 +376,10 @@ if is_available "telescope.nvim" then
   }
 end
 
+-- Fix last speling
+maps.n["<C-l>"] = {"<c-g>u<Esc>[s1z=`]a<c-g>u", desc = "fix last spelling"}
+
+
 -- Terminal
 if is_available "toggleterm.nvim" then
   local toggle_term_cmd = astronvim.toggle_term_cmd
@@ -434,6 +438,8 @@ maps.t["<C-h>"] = { "<c-\\><c-n><c-w>h", desc = "Terminal left window navigation
 maps.t["<C-j>"] = { "<c-\\><c-n><c-w>j", desc = "Terminal down window navigation" }
 maps.t["<C-k>"] = { "<c-\\><c-n><c-w>k", desc = "Terminal up window navigation" }
 maps.t["<C-l>"] = { "<c-\\><c-n><c-w>l", desc = "Terminal right window naviation" }
+
+
 
 astronvim.set_mappings(astronvim.user_plugin_opts("mappings", maps))
 
