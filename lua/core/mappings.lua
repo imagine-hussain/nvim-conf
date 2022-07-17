@@ -377,7 +377,7 @@ if is_available "telescope.nvim" then
 end
 
 -- Fix last speling
-maps.n["<C-l>"] = {"<c-g>u<Esc>[s1z=`]a<c-g>u", desc = "fix last spelling"}
+maps.i["<C-l>"] = {"<c-g>u<Esc>[s1z=`]a<c-g>u", desc = "fix last spelling"}
 
 
 -- Terminal

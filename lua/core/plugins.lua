@@ -205,11 +205,11 @@ local astro_plugins = {
     end,
   },
   -- -- Conceal for tex
-  -- ["KeitaNakamura/tex-conceal.vim"] = {
-  --   config = function()
-  --     require "configs.tex-conceal"
-  --   end,
-  -- },
+  ["KeitaNakamura/tex-conceal.vim"] = {
+    config = function()
+      require "configs.tex-conceal"
+    end,
+  },
 
   -- UltiSnips
   ["SirVer/ultisnips"] = {
