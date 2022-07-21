@@ -1,6 +1,6 @@
 
 vim.cmd("hi Conceal ctermbg=None")
-vim.cmd("set conceallevel=1")
+vim.cmd("set conceallevel=2")
 
 -- a = accents/ligatures
 -- b = bold and italic

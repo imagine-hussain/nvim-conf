@@ -117,8 +117,7 @@ local astro_plugins = {
 
   -- Snippet collection
   ["rafamadriz/friendly-snippets"] = { opt = true },
-
-  -- Snippet engine
+  -- Snippet engine - Lua base
   ["L3MON4D3/LuaSnip"] = {
     module = "luasnip",
     wants = "friendly-snippets",
@@ -134,6 +133,15 @@ local astro_plugins = {
       require "configs.cmp"
     end,
   },
+
+  -- Completion Source for UltiSnips
+  -- ["git@github.com:quangnguyen30192/cmp-nvim-ultisnips.git"] = {
+  --   event = "InsertEnter",
+  --   after = "nvim-cmp",
+  --   config = function()
+  --     require "configs.cmp-ultisnips"
+  --   end,
+  -- },
 
   -- Snippet completion source
   ["saadparwaiz1/cmp_luasnip"] = {
@@ -196,18 +204,20 @@ local astro_plugins = {
     end,
   },
 
-  -- Vimtex - Dependency for tex.snippets
-  ["lervag/vimtex"] = {
-    module = "vimtex",
-    event = "VimEnter",
-    config = function()
-      require "configs.vimtex"
-    end,
-  },
   -- -- Conceal for tex
   ["KeitaNakamura/tex-conceal.vim"] = {
     config = function()
       require "configs.tex-conceal"
+    end,
+  },
+
+  -- Vimtex - Dependency for tex.snippets
+  ["lervag/vimtex"] = {
+    module = "vimtex",
+    event = "VimEnter",
+    tag = "v1.6",
+    config = function()
+      require "configs.vimtex"
     end,
   },
 
@@ -366,6 +376,11 @@ local astro_plugins = {
       require "configs.colors"
     end,
   },
+  ["gantoreno/vim-gabriel"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
 
   -- Get extra JSON schemas
   ["b0o/SchemaStore.nvim"] = { module = "schemastore" },
@@ -399,6 +414,24 @@ local astro_plugins = {
     config = function ()
       require "configs.discord"
     end
+  },
+
+  -- Wikipedia Browser
+  ["el-iot/vim-wikipedia-browser"] = {},
+  -- Media Wiki - Syntax Highlighting
+  ["chikamichi/mediawiki.vim"] = {},
+
+  -- Async Promise -- Dependency for UFO folds
+  ["kevinhwang91/promise-async"] = {},
+
+  -- Folds
+  ["kevinhwang91/nvim-ufo"] = {
+    -- run = ':TSUpdate',
+    after = "promise-async",
+    event = { "BufRead", "BufNewFile" },
+    config = function ()
+      require "configs.nvim-ufo"
+    end,
   },
 }
 
