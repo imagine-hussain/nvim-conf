@@ -94,7 +94,7 @@ nvim +PackerSync
 
 ```
 git clone git@github.com:imagine-hussain/nvim-conf.git ~/.config.nvim
-nvim PackerSync
+nvim +PackerSync
 ```
 
 ## 📦 Basic Setup
