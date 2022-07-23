@@ -57,6 +57,7 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     loaded_zipPlugin = true, -- disable zip
     loaded_vimball = true, -- disable vimball
     loaded_vimballPlugin = true, -- disable vimball
+    tex_flavour="latex", -- force 'latex' instead of 'plaintex'
   },
 }))
 

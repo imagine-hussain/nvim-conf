@@ -27,6 +27,7 @@ vim.cmd([[let g:vimtex_syntax_conceal = {
 vim.cmd("g:vimtex_syntax_enabled")
 vim.cmd("g:vimtex_syntax_nested")
 vim.cmd("g:vimtex_syntax_autoload_packages")
+vim.cmd("let g:tex_flavor='latex'")
 
 -- Viewer options: One may configure the viewer either by specifying a built-in
 -- viewer method:
