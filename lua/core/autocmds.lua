@@ -100,10 +100,11 @@ if is_available "feline.nvim" then
 end
 
 -- Hot Reload for Snippets
-cmd({"BufWritePost"}, {
-  pattern={"*.snippets", "*.snippets.bak"},
-  command= ":CmpUltisnipsReloadSnippets"
-})
+-- cmd({"BufWritePost"}, {
+--   pattern={"*.snippets", "*.snippets.bak"},
+--   command= ":CmpUltisnipsReloadSnippets"
+-- })
+
 -- autocmd BufWritePost *.snippets :CmpUltisnipsReloadSnippets
 create_command("AstroUpdate", astronvim.updater.update, { desc = "Update AstroNvim" })
 create_command("AstroVersion", astronvim.updater.version, { desc = "Check AstroNvim Version" })

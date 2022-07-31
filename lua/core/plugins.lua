@@ -433,6 +433,15 @@ local astro_plugins = {
       require "configs.nvim-ufo"
     end,
   },
+
+  -- Leetcode Cli:
+  -- Dependency: `pip3 install pynvim --user`
+  -- Dependency: `pip3 install keyring browser-cookie3 --user`
+  ["ianding1/leetcode.vim"] = {
+    config = function()
+      require "configs.leetcode"
+    end,
+  },
 }
 
 if astronvim.updater.snapshot then

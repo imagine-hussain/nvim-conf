@@ -22,7 +22,7 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     showmode = false, -- Disable showing modes in command line
     sidescrolloff = 8, -- Number of columns to keep at the sides of the cursor
     signcolumn = "yes", -- Always show the sign column
-    smartcase = true, -- Case sensitivie searching
+    smartcase = true, -- Case sensitive searching
     splitbelow = true, -- Splitting a new window below the current one
     splitright = true, -- Splitting a new window at the right of the current one
     swapfile = false, -- Disable use of swapfile for the buffer
@@ -57,7 +57,10 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     loaded_zipPlugin = true, -- disable zip
     loaded_vimball = true, -- disable vimball
     loaded_vimballPlugin = true, -- disable vimball
-    tex_flavour="latex", -- force 'latex' instead of 'plaintex'
+    tex_flavour="latex", -- force 'latex' instead of 'plaintex',
+    vimtex_compiler_method='latexrun', -- way to compile latex - ['latexrun', 'latexmk'],
+    leetcode_browser='chrome', -- used by LC extension for browser
+    leetcode_solution_filetype='python3', -- Supports: 'cpp', 'java', 'python', 'python3', 'csharp', 'javascript', 'ruby', 'swift', 'golang', 'scala', 'kotlin', 'rust
   },
 }))
 
