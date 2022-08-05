@@ -58,7 +58,8 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     loaded_vimball = true, -- disable vimball
     loaded_vimballPlugin = true, -- disable vimball
     tex_flavour="latex", -- force 'latex' instead of 'plaintex',
-    vimtex_compiler_method='latexrun', -- way to compile latex - ['latexrun', 'latexmk'],
+    vimtex_compiler_method='latexmk', -- way to compile latex - ['latexrun', 'latexmk']
+    --copilot_node_command = '/usr/local/bin/node', -- alternative node for copilot
     leetcode_browser='chrome', -- used by LC extension for browser
     leetcode_solution_filetype='python3', -- Supports: 'cpp', 'java', 'python', 'python3', 'csharp', 'javascript', 'ruby', 'swift', 'golang', 'scala', 'kotlin', 'rust
   },
