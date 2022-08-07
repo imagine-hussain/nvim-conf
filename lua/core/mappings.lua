@@ -441,7 +441,5 @@ maps.t["<C-j>"] = { "<c-\\><c-n><c-w>j", desc = "Terminal down window navigation
 maps.t["<C-k>"] = { "<c-\\><c-n><c-w>k", desc = "Terminal up window navigation" }
 maps.t["<C-l>"] = { "<c-\\><c-n><c-w>l", desc = "Terminal right window naviation" }
 
-
-
 astronvim.set_mappings(astronvim.user_plugin_opts("mappings", maps))
 
