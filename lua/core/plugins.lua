@@ -42,7 +42,7 @@ local function init_plugins(packer)
   packer.startup {
     function (use)
       -- use all the plugins if, they haven't been init already
-      for key, plugin in plugin_table do
+      for key, plugin in pairs(plugin_table) do
         if type(key) == "string" and not plugin[1] then
           plugin[1] = key
         end
