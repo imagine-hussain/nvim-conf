@@ -12,22 +12,35 @@ local plugin_table = {
 
   -- Popup api
   ["nvim-lua/popup.nvim"] = {},
+
+
+  --
+  -- Colors
+  --
+  ["sainnhe/gruvbox-material"] = {
+    config = function()
+      require "configs.colours"
+    end,
+  }
 }
 
 local packer_path = vim.fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
+
+local function install_packer()
+    vim.fn.delete(packer_path, "rf")
+    vim.fn.system {
+      "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", packer_path
+    }
+    vim.api.nvim_echo({"initialising packer"}, false, {})
+    vim.cmd "packadd packer.nvim"
+end
 
 local function init_packer()
   -- If packer can't be called, then install it
   local packer_available, packer = pcall(require, "packer")
   if not packer_available then
-    vim.fn.delete(packer_path, "rf")
-    -- clone repo
-    vim.fn.system {
-      "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", packer_path
-    }
-    vim.api.nvim_echo({"initialising packer"}, false, {})
+    install_packer()
     -- Try to re-source after install
-    vim.cmd "packadd packer.nvim"
     packer_available, packer = pcall(require, "packer")
     if not packer_available then
       vim.api.nvim_err_writeln(
@@ -37,6 +50,7 @@ local function init_packer()
   end
   return packer
 end
+
 
 local function init_plugins(packer)
   packer.startup {
