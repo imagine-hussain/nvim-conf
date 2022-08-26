@@ -18,9 +18,9 @@ local plugin_table = {
   -- Colors
   --
   ["sainnhe/gruvbox-material"] = {
-    config = function()
-      require "configs.colours"
-    end,
+    -- config = function()
+    --   require "configs.colours"
+    -- end,
   }
 }
 
