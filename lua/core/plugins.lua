@@ -115,6 +115,13 @@ local astro_plugins = {
     end,
   },
 
+  -- Sticky sroll
+  ["nvim-treesitter/nvim-treesitter-context"] = {
+    config = function()
+      require "configs.treesitter-context"
+    end,
+  },
+
   -- Snippet collection
   ["rafamadriz/friendly-snippets"] = { opt = true },
   -- Snippet engine - Lua base
@@ -359,7 +366,7 @@ local astro_plugins = {
   },
 
   --
-  -- Colorschemes
+  -- Colorschemes - Colours
   --
   ["sainnhe/gruvbox-material"] = {
     config = function()
@@ -380,6 +387,11 @@ local astro_plugins = {
     config = function()
       require "configs.colors"
     end,
+  },
+  ["catppuccin/nvim"] = {
+    config = function ()
+      require "configs.colors"
+    end
   },
 
   -- Get extra JSON schemas
@@ -442,6 +454,9 @@ local astro_plugins = {
       require "configs.leetcode"
     end,
   },
+
+  -- Firenvim - Use nvim in chrome
+  ["glacambre/firenvim"] = {},
 }
 
 if astronvim.updater.snapshot then

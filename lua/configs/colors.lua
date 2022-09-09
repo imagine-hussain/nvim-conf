@@ -20,5 +20,11 @@ vim.cmd('let g:gruvbox_material_background="hard"')
 
 -- set the actual theme
 -- vim.cmd("colorscheme gruvbox-material")
-vim.cmd("colorscheme gruvbox-material")
+
+-- Catppuccin:
+-- vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+
+-- require("catppuccin").setup()
+
+vim.cmd [[colorscheme gruvbox-material]]
 

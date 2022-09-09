@@ -31,7 +31,7 @@ if status_ok then
       {
         type = "group",
         val = {
-          alpha_button("<c-p>", "  Find File  "),
+          alpha_button("LDR f f", "  Find File  "),
           alpha_button("LDR f o", "  Recents  "),
           alpha_button("LDR f w", "  Find Word  "),
           alpha_button("LDR f n", "  New File  "),
