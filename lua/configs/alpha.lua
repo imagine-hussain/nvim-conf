@@ -6,7 +6,7 @@ if status_ok then
       { type = "padding", val = vim.fn.max { 2, vim.fn.floor(vim.fn.winheight(0) * 0.2) } },
       {
         type = "text",
-        val = astronvim.user_plugin_opts("header", {
+        val = {
           "                      ███    ██ ██    ██ ██ ███    ███     ",
           "                      ████   ██ ██    ██ ██ ████  ████     ",
           "                      ██ ██  ██ ██    ██ ██ ██ ████ ██     ",
@@ -24,7 +24,7 @@ if status_ok then
           "  greater damage on the natural world, it will probably lead to greater",
           "    social disruption and psychological suffering, and it may lead to",
           "             increased physical a even for 'advanced' hardware.",
-        }, false),
+        },
         opts = { position = "center", hl = "DashboardHeader" },
       },
       { type = "padding", val = 5 },
