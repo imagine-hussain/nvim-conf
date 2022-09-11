@@ -54,6 +54,14 @@ local astro_plugins = {
     end,
   },
 
+  -- Give each tab its own scope
+  ["/tiagovla/scope.nvim"] = {
+    event = "VimEnter",
+    config = function()
+      require("scope").setup()
+    end,
+  },
+
   -- Bufferline
   ["akinsho/bufferline.nvim"] = {
     after = "nvim-web-devicons",
