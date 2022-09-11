@@ -7,11 +7,11 @@ if status_ok then
       {
         type = "text",
         val = {
-          "                      ███    ██ ██    ██ ██ ███    ███     ",
-          "                      ████   ██ ██    ██ ██ ████  ████     ",
-          "                      ██ ██  ██ ██    ██ ██ ██ ████ ██     ",
-          "                      ██  ██ ██  ██  ██  ██ ██  ██  ██     ",
-          "                      ██   ████   ████   ██ ██      ██     ",
+          "                      ███    ██ ██    ██ ██ ███    ███                   ",
+          "                      ████   ██ ██    ██ ██ ████  ████                   ",
+          "                      ██ ██  ██ ██    ██ ██ ██ ████ ██                   ",
+          "                      ██  ██ ██  ██  ██  ██ ██  ██  ██                   ",
+          "                      ██   ████   ████   ██ ██      ██                   ",
           "",
           "  The Electron Revolution and its consequences have been a disaster for the",
           " human race.  They have greatly increased the convenience of those of us who",
