@@ -66,12 +66,12 @@ end
 if is_available "Comment.nvim" then
   maps.n["<leader>/"] = {
     function()
-      require("Comment.api").toggle_current_linewise()
+      require("Comment.api").toggle.linewise()
     end,
     desc = "Comment line",
   }
   maps.v["<leader>/"] = {
-    "<esc><cmd>lua require('Comment.api').toggle_linewise_op(vim.fn.visualmode())<cr>",
+    "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
     desc = "Toggle comment line",
   }
 end
