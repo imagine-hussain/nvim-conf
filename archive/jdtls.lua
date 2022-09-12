@@ -1,13 +1,16 @@
-
-require('lspconfig').jdtls.setup {
-  on_attach = require'completion'.on_attach,
-  cmd = { "jdt-language-server" },
-  root_dir = "require"
-  local root_dir = require("jdtls.setup").find_root(root_markers)
-  if root_dir == "" then
-    return
-  end
-}
+--[[]]
+--[[ local status_ok, lspconfig = pcall(require, "lspconfig") ]]
+--[[ if not status_ok then ]]
+--[[   return ]]
+--[[ end ]]
+--[[]]
+--[[ local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" } ]]
+--[[ require('lspconfig').jdtls.setup { ]]
+--[[   on_attach = require'completion'.on_attach, ]]
+--[[   cmd = { "jdt-language-server" }, ]]
+--[[]]
+--[[   root_dir = require("jdtls.setup").find_root(root_markers) ]]
+--[[ } ]]
 
 
 

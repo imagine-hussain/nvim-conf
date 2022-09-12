@@ -58,7 +58,7 @@ function astronvim.trim_or_nil(str)
 end
 
 function astronvim.notify(msg, type, opts)
-  vim.notify(msg, type, vim.tbl_deep_extend("force", { title = "AstroNvim" }, opts or {}))
+  vim.notify(msg, type, vim.tbl_deep_extend("force", { title = "Config" }, opts or {}))
 end
 
 function astronvim.echo(messages)

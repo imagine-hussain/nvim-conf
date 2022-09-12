@@ -213,21 +213,21 @@ local astro_plugins = {
   },
 
   -- -- Conceal for tex
-  ["KeitaNakamura/tex-conceal.vim"] = {
-    config = function()
-      require "configs.tex-conceal"
-    end,
-  },
+  -- ["KeitaNakamura/tex-conceal.vim"] = {
+  --   config = function()
+  --     require "configs.tex-conceal"
+  --   end,
+  -- },
 
   -- Vimtex - Dependency for tex.snippets
-  ["lervag/vimtex"] = {
-    module = "vimtex",
-    event = "VimEnter",
-    tag = "v1.6",
-    config = function()
-      require "configs.vimtex"
-    end,
-  },
+  -- ["lervag/vimtex"] = {
+  --   module = "vimtex",
+  --   event = "VimEnter",
+  --   tag = "v1.6",
+  --   config = function()
+  --     require "configs.vimtex"
+  --   end,
+  -- },
 
   -- UltiSnips
   ["SirVer/ultisnips"] = {
@@ -384,11 +384,43 @@ local astro_plugins = {
       require "configs.colors"
     end,
   },
-  ["gantoreno/vim-gabriel"] = {
+  -- Previously vim-gabriel
+  ["gantoreno/vim-startrail"] = {
     config = function()
       require "configs.colors"
     end,
   },
+  ["arzg/vim-substrata"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
+  ["https://gitlab.com/exorcist365/salvation-vim"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
+  ["sainnhe/everforest"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
+  ["folke/tokyonight.nvim"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
+  ["cocopon/iceberg.vim"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
+  ["arcticicestudio/nord-vim"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
+  -- end-colorschemes
 
   -- Get extra JSON schemas
   ["b0o/SchemaStore.nvim"] = { module = "schemastore" },
