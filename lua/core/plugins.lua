@@ -12,20 +12,34 @@ local astro_plugins = {
   ["nvim-lua/popup.nvim"] = {},
 
   -- Indent detection
-  ["Darazaki/indent-o-matic"] = {
-    event = "BufReadPost",
-    config = function()
-      require "configs.indent-o-matic"
-    end,
+  --[[ ["Darazaki/indent-o-matic"] = { ]]
+  --[[   event = "BufReadPost", ]]
+  --[[   config = function() ]]
+  --[[     require "configs.indent-o-matic" ]]
+  --[[   end, ]]
+  --[[ }, ]]
+  ["tpope/vim-sleuth"] = {},
+
+  -- Strip whitespace when editing
+  ["lewis6991/spaceless.nvim"] = {
+    config = function ()
+      require "spaceless".setup()
+    end
   },
 
   -- Notification Enhancer
-  ["rcarriga/nvim-notify"] = {
+  ["imagine-hussain/nvim-notify"] = {
     event = "VimEnter",
     config = function()
       require "configs.notify"
     end,
   },
+  --[[ ["rcarriga/nvim-notify"] = { ]]
+  --[[   event = "VimEnter", ]]
+  --[[   config = function() ]]
+  --[[     require "configs.notify" ]]
+  --[[   end, ]]
+  --[[ }, ]]
 
   -- Neovim UI Enhancer
   ["MunifTanjim/nui.nvim"] = { module = "nui" },
@@ -212,6 +226,13 @@ local astro_plugins = {
     end,
   },
 
+  -- Java lsp
+  ["mfussenegger/nvim-jdtls"] = {
+    config = function()
+      require "configs.nvim-jdtls"
+    end,
+  },
+
   -- -- Conceal for tex
   -- ["KeitaNakamura/tex-conceal.vim"] = {
   --   config = function()
@@ -263,7 +284,7 @@ local astro_plugins = {
       require "configs.gitsigns"
     end,
   },
-  -- Git 
+  -- Git
   ["pwntester/octo.nvim"] = {
     event = "BufEnter",
     config = function()

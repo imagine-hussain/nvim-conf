@@ -18,7 +18,7 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     pumheight = 10, -- Height of the pop up menu
     relativenumber = true, -- Show relative numberline
     scrolloff = 8, -- Number of lines to keep above and below the cursor
-    shiftwidth = 2, -- Number of space inserted for indentation
+    shiftwidth = 4, -- Number of space inserted for indentation
     showmode = false, -- Disable showing modes in command line
     sidescrolloff = 8, -- Number of columns to keep at the sides of the cursor
     signcolumn = "yes", -- Always show the sign column
@@ -26,7 +26,7 @@ astronvim.vim_opts(astronvim.user_plugin_opts("options", {
     splitbelow = true, -- Splitting a new window below the current one
     splitright = true, -- Splitting a new window at the right of the current one
     swapfile = false, -- Disable use of swapfile for the buffer
-    tabstop = 2, -- Number of space in a tab
+    tabstop = 4, -- Number of space in a tab
     termguicolors = true, -- Enable 24-bit RGB color in the TUI
     timeoutlen = 300, -- Length of time to wait for a mapped sequence
     undofile = true, -- Enable persistent undo
