@@ -281,6 +281,13 @@ if is_available "telescope.nvim" then
     end,
     desc = "Search all files",
   }
+  maps.n["<leader>fd"] = {
+    function()
+      require("telescope.builtin").diagnostics()
+    end,
+    desc = "Search diagnostics",
+  }
+
   maps.n["<leader>fb"] = {
     function()
       require("telescope.builtin").buffers()

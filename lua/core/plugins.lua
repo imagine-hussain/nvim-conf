@@ -137,6 +137,13 @@ local astro_plugins = {
     end,
   },
 
+  --[[ ["nvim-treesitter/playground"] = { ]]
+  --[[   after = "nvim-treesitter", ]]
+  --[[   config = function () ]]
+  --[[     require "configs.treesitter-playground" ]]
+  --[[   end, ]]
+  --[[ }, ]]
+
   -- Snippet collection
   ["rafamadriz/friendly-snippets"] = { opt = true },
   -- Snippet engine - Lua base
@@ -268,12 +275,15 @@ local astro_plugins = {
     end,
   },
 
-  -- Fuzzy finder syntax support
-  [("nvim-telescope/telescope-%s-native.nvim"):format(vim.fn.has "win32" == 1 and "fzy" or "fzf")] = {
+  -- FZF fuzzy finder
+  --[[ ["junegunn/fzf"] = {}, ]]
+
+  -- Fuzzy finder syntax supporvim.fn.has "win32" == 1 and "fzy" or "fzf"t
+  [("nvim-telescope/telescope-fzf-native.nvim")] = {
     after = "telescope.nvim",
-    run = vim.fn.has "win32" ~= 1 and "make" or nil,
+    --[[ run = vim.fn.has "win32" ~= 1 and "make" or nil, ]]
     config = function()
-      require("telescope").load_extension(vim.fn.has "win32" == 1 and "fzy_native" or "fzf")
+      require("telescope") --.load_extension("fzf")
     end,
   },
 

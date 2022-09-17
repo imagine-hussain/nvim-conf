@@ -83,7 +83,7 @@ vim.list_extend(bundles, extra_bundles)
 
 local config = {
   cmd = {
-    "java",
+    "../java",
     --[[ "-Declipse.application=org.eclipse.jdt.ls.core.id1", ]]
     --[[ "-Dosgi.bundles.defaultStartLevel=4", ]]
     --[[ "-Declipse.product=org.eclipse.jdt.ls.core.product", ]]
