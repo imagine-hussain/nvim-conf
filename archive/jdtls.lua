@@ -13,7 +13,16 @@
 --[[ } ]]
 
 
---[[ credit: https://github.com/ChristianChiarulli/nvim ]]
+
+
+
+
+
+
+
+
+--
+-- credit: https://github.com/ChristianChiarulli/nvim
 local status_ok, jdtls = pcall(require, "jdtls")
 if not status_ok then
   return
@@ -83,23 +92,23 @@ vim.list_extend(bundles, extra_bundles)
 
 local config = {
   cmd = {
-    "../java",
-    --[[ "-Declipse.application=org.eclipse.jdt.ls.core.id1", ]]
-    --[[ "-Dosgi.bundles.defaultStartLevel=4", ]]
-    --[[ "-Declipse.product=org.eclipse.jdt.ls.core.product", ]]
-    --[[ "-Dlog.protocol=true", ]]
-    --[[ "-Dlog.level=ALL", ]]
-    --[[ "-javaagent:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar", ]]
-    --[[ "-Xms1g", ]]
-    --[[ "--add-modules=ALL-SYSTEM", ]]
-    --[[ "--add-opens", ]]
-    --[[ "java.base/java.util=ALL-UNNAMED", ]]
-    --[[ "--add-opens", ]]
-    --[[ "java.base/java.lang=ALL-UNNAMED", ]]
-    --[[ "-jar", ]]
-    --[[ launcher_path, ]]
-    --[[ "-configuration", ]]
-    --[[ home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG, ]]
+    "java",
+    "-Declipse.application=org.eclipse.jdt.ls.core.id1",
+    "-Dosgi.bundles.defaultStartLevel=4",
+    "-Declipse.product=org.eclipse.jdt.ls.core.product",
+    "-Dlog.protocol=true",
+    "-Dlog.level=ALL",
+    "-javaagent:" .. home .. "/.local/share/nvim/lsp_servers/jdtls/lombok.jar",
+    "-Xms1g",
+    "--add-modules=ALL-SYSTEM",
+    "--add-opens",
+    "java.base/java.util=ALL-UNNAMED",
+    "--add-opens",
+    "java.base/java.lang=ALL-UNNAMED",
+    "-jar",
+    launcher_path,
+    "-configuration",
+    home .. "/.local/share/nvim/lsp_servers/jdtls/config_" .. CONFIG,
     "-data",
     workspace_dir,
   },

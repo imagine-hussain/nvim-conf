@@ -62,6 +62,10 @@ else
   maps.n["<S-h>"] = { "<cmd>bprevious<cr>", desc = "Previous buffer" }
 end
 
+-- Navigate Tabs
+maps.n["<leader>tn"] = { "<cmd>tabnew<cr>", desc = "New tab" }
+maps.n["<leader>tc"] = { "<cmd>tabclose<cr>", desc = "Close tab" }
+
 -- Comment
 if is_available "Comment.nvim" then
   maps.n["<leader>/"] = {
@@ -399,12 +403,12 @@ if is_available "toggleterm.nvim" then
     end,
     desc = "ToggleTerm lazygit",
   }
-  maps.n["<leader>tn"] = {
-    function()
-      toggle_term_cmd "node"
-    end,
-    desc = "ToggleTerm node",
-  }
+  --[[ maps.n["<leader>tn"] = { ]]
+  --[[   function() ]]
+  --[[     toggle_term_cmd "node" ]]
+  --[[   end, ]]
+  --[[   desc = "ToggleTerm node", ]]
+  --[[ } ]]
   maps.n["<leader>tu"] = {
     function()
       toggle_term_cmd "ncdu"

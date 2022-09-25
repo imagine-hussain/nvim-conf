@@ -87,6 +87,9 @@ local astro_plugins = {
   -- Better buffer closing
   ["famiu/bufdelete.nvim"] = { cmd = { "Bdelete", "Bwipeout" } },
 
+  -- Tab navigation with <leader>\d
+  ["antonk52/vim-tabber"] = {},
+
   -- File explorer
   ["nvim-neo-tree/neo-tree.nvim"] = {
     branch = "v2.x",
@@ -451,6 +454,16 @@ local astro_plugins = {
       require "configs.colors"
     end,
   },
+  ["Everblush/everblush.nvim"] = {
+    config = function()
+      require "configs.colors"
+    end,
+  },
+  ["rebelot/kanagawa.nvim"] = {
+    config = function ()
+      require "configs.colors"
+    end,
+  },
   -- end-colorschemes
 
   -- Get extra JSON schemas
@@ -467,11 +480,11 @@ local astro_plugins = {
   },
 
   -- Wiki
-  ["vimwiki/vimwiki"] = {
-    config = function()
-      require "configs.vimwiki"
-    end,
-  },
+  --[[ ["vimwiki/vimwiki"] = { ]]
+  --[[   config = function() ]]
+  --[[     require "configs.vimwiki" ]]
+  --[[   end, ]]
+  --[[ }, ]]
 
   -- Copilot
   ["github/copilot.vim"] = {
@@ -513,6 +526,18 @@ local astro_plugins = {
       require "configs.leetcode"
     end,
   },
+
+  ["epwalsh/obsidian.nvim"] = {
+    event = { "BufRead", "BufNewFile" },
+    config = function()
+      require "configs.obsidian"
+    end,
+  },
+
+  -- Preview Markdown
+  -- Dependency: `pandoc`
+  -- `brew install pandoc`
+  ["davidgranstrom/nvim-markdown-preview"] = {},
 }
 
 if astronvim.updater.snapshot then
