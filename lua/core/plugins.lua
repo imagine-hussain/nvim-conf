@@ -527,16 +527,17 @@ local astro_plugins = {
     end,
   },
 
-  ["epwalsh/obsidian.nvim"] = {
-    event = { "BufRead", "BufNewFile" },
-    config = function()
-      require "configs.obsidian"
-    end,
-  },
+  --[[ ["epwalsh/obsidian.nvim"] = { ]]
+  --[[   event = { "BufRead", "BufNewFile" }, ]]
+  --[[   config = function() ]]
+  --[[     require "configs.obsidian" ]]
+  --[[   end, ]]
+  --[[ }, ]]
 
   -- Preview Markdown
-  -- Dependency: `pandoc`
+  -- Dependency: `pandoc` and `live-server`
   -- `brew install pandoc`
+  -- `npm install -g live-server`
   ["davidgranstrom/nvim-markdown-preview"] = {},
 }
 
