@@ -147,6 +147,10 @@ local astro_plugins = {
   --[[   end, ]]
   --[[ }, ]]
 
+  --
+  --
+  -- Lsp and Completions
+  --
   -- Snippet collection
   ["rafamadriz/friendly-snippets"] = { opt = true },
   -- Snippet engine - Lua base
@@ -243,13 +247,50 @@ local astro_plugins = {
     end,
   },
 
+  ---
+  --- Debugging
+  ---
+  -- Debugging Protocol
+  ["mfussenegger/nvim-dap"] = {},
+
+  -- Telescope Integration for Dap
+  ["nvim-telescope/telescope-dap.nvim"] = {
+    after = "nvim-dap",
+  },
+
+  -- UI for Debugging
+  ["rcarriga/nvim-dap-ui"] = {
+    after = "nvim-dap",
+    --[[ config = function() ]]
+    --[[   require "configs.nvim-dap-ui" ]]
+    --[[ end, ]]
+  },
+
+  -- Inline Virtual Text for Debugging
+  ["theHamsta/nvim-dap-virtual-text"] = {
+    after = "nvim-dap",
+  },
+
+  -- Debug Server Python
+  -- Dependency for `nvim-dap-python`
+  ["microsoft/debugpy"] = {
+    after = "nvim-dap",
+  },
+
+  -- Debugger for Python
+  ["mfussenegger/nvim-dap-python"] = {
+    after = { "nvim-dap", "debugpy" },
+  },
+
+
+
+
   -- -- Conceal for tex
   -- ["KeitaNakamura/tex-conceal.vim"] = {
   --   config = function()
   --     require "configs.tex-conceal"
   --   end,
   -- },
-
   -- Vimtex - Dependency for tex.snippets
   -- ["lervag/vimtex"] = {
   --   module = "vimtex",

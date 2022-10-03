@@ -1,5 +1,12 @@
 local status_ok, notify = pcall(require, "notify")
 
+--[[ if status_ok then ]]
+--[[   notify.setup { ]]
+--[[     stages = "fade", ]]
+--[[   } ]]
+--[[   vim.notify = notify ]]
+--[[ end ]]
+
 if status_ok then
   notify.setup {
     stages = "fade",
@@ -14,9 +21,16 @@ if status_ok then
     if msg:match("with no corresponding") then
       return
     end
+
+    -- bad attaches
+    if msg:match("Client 1 quit with exit code 1 and signal 0") then
+      return
+    end
+
     notify(msg, ...)
   end
 end
+
 
 --[[ vim.notify = notify ]]
 --[[ local notify = vim.notify ]]
