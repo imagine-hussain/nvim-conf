@@ -30,6 +30,7 @@ local astro_plugins = {
   -- Notification Enhancer
   ["imagine-hussain/nvim-notify"] = {
     event = "VimEnter",
+    module = { "nvim-notify" },
     config = function()
       require "configs.notify"
     end,
@@ -55,17 +56,17 @@ local astro_plugins = {
   },
 
   -- Noice: Nice, Noise, Notice: UI replace for messages, cmdline, popupmenu
-  ["folke/noice.nvim"] = {
-    event = "VimEnter",
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
-      "hrsh7th/nvim-cmp",
-    },
-    config = function()
-      require "configs.noice"
-    end,
-  },
+  -- ["folke/noice.nvim"] = {
+  --   event = "VimEnter",
+  --   after = {
+  --     "nui.nvim",
+  --     "nvim-notify",
+  --     "nvim-cmp",
+  --   },
+  --   config = function()
+  --     require "configs.noice"
+  --   end,
+  -- },
 
   -- Smarter Splits
   ["mrjones2014/smart-splits.nvim"] = {
@@ -179,6 +180,7 @@ local astro_plugins = {
 
   -- Completion engine
   ["hrsh7th/nvim-cmp"] = {
+    module = { "nvim-cmp", "cmp" },
     event = "InsertEnter",
     config = function()
       require "configs.cmp"
@@ -256,11 +258,11 @@ local astro_plugins = {
   },
 
   -- Java lsp
-  ["mfussenegger/nvim-jdtls"] = {
-    config = function()
-      require "configs.nvim-jdtls"
-    end,
-  },
+  -- ["mfussenegger/nvim-jdtls"] = {
+  --   config = function()
+  --     require "configs.nvim-jdtls"
+  --   end,
+  -- },
 
   ---
   --- Debugging
