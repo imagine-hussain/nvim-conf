@@ -41,7 +41,7 @@ maps.n["<leader>pu"] = { "<cmd>PackerUpdate<cr>", desc = "Packer Update" }
 
 -- Alpha
 if is_available "alpha-nvim" then
-  maps.n["<leader>d"] = { "<cmd>Alpha<cr>", desc = "Alpha Dashboard" }
+  maps.n["<leader>0"] = { "<cmd>Alpha<cr>", desc = "Alpha Dashboard" }
 end
 
 -- Bufdelete
@@ -389,6 +389,24 @@ if is_available "telescope.nvim" then
   }
 end
 
+-- Debugging Controls
+--[[ if is_available "nvim-dap" then ]]
+  maps.n["<F5>"] = { "<cmd>lua require'dap'.continue()<CR>", desc = "Continue" }
+  maps.n["<F10>"] = { "<cmd>lua require'dap'.step_over()<CR>", desc = "Step over" }
+  maps.n["<F11>"] = { "<cmd>lua require'dap'.step_into()<CR>", desc = "Step into" }
+  maps.n["<leader>b"] = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", desc = "Toggle breakpoint" }
+  maps.n["<leader>B"] = {
+    "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+    desc = "Set breakpoint"
+  }
+  maps.n["<leader>lp"] = {
+    "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+    desc = "Log point"
+  }
+  maps.n["<leader>dr"] = { "<cmd>lua require'dap'.repl.open()<CR>", desc = "Open Debug REPL" }
+--[[ end ]]
+
+--
 -- Fix last speling
 maps.i["<C-l>"] = {"<c-g>u<Esc>[s1z=`]a<c-g>u", desc = "fix last spelling"}
 

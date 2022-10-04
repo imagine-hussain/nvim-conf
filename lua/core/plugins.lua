@@ -34,6 +34,8 @@ local astro_plugins = {
       require "configs.notify"
     end,
   },
+
+
   --[[ ["rcarriga/nvim-notify"] = { ]]
   --[[   event = "VimEnter", ]]
   --[[   config = function() ]]
@@ -49,6 +51,19 @@ local astro_plugins = {
     event = { "BufRead", "BufNewFile" },
     config = function()
       vim.g.cursorhold_updatetime = 100
+    end,
+  },
+
+  -- Noice: Nice, Noise, Notice: UI replace for messages, cmdline, popupmenu
+  ["folke/noice.nvim"] = {
+    event = "VimEnter",
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+      "hrsh7th/nvim-cmp",
+    },
+    config = function()
+      require "configs.noice"
     end,
   },
 
