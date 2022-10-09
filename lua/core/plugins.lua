@@ -12,13 +12,13 @@ local astro_plugins = {
   ["nvim-lua/popup.nvim"] = {},
 
   -- Indent detection
-  --[[ ["Darazaki/indent-o-matic"] = { ]]
-  --[[   event = "BufReadPost", ]]
-  --[[   config = function() ]]
-  --[[     require "configs.indent-o-matic" ]]
-  --[[   end, ]]
-  --[[ }, ]]
-  ["tpope/vim-sleuth"] = {},
+  ["Darazaki/indent-o-matic"] = {
+    event = "BufReadPost",
+    config = function()
+      require "configs.indent-o-matic"
+    end,
+  },
+  --[[ ["tpope/vim-sleuth"] = {}, ]]
 
   -- Strip whitespace when editing
   ["lewis6991/spaceless.nvim"] = {
@@ -55,6 +55,7 @@ local astro_plugins = {
     end,
   },
 
+  -- NEEDS: Nvim 0.8
   -- Noice: Nice, Noise, Notice: UI replace for messages, cmdline, popupmenu
   -- ["folke/noice.nvim"] = {
   --   event = "VimEnter",
@@ -258,11 +259,18 @@ local astro_plugins = {
   },
 
   -- Java lsp
-  -- ["mfussenegger/nvim-jdtls"] = {
-  --   config = function()
-  --     require "configs.nvim-jdtls"
-  --   end,
-  -- },
+  ["mfussenegger/nvim-jdtls"] = {
+    config = function()
+      require "configs.nvim-jdtls"
+    end,
+  },
+
+  -- Code runner (mainly for java)
+  ["CRAG666/code_runner.nvim"] = {
+    config = function()
+      require "configs.code-runner"
+    end,
+  },
 
   ---
   --- Debugging
