@@ -3,7 +3,6 @@
 -- Material Gruvox
 vim.cmd('let g:gruvbox_material_foreground="material"')
 vim.cmd('let g:gruvbox_material_background="hard"')
-vim.cmd('set background=dark')
 
 -- Github
 -- require("github-theme").setup({
@@ -38,13 +37,14 @@ if kanagawa_ok then
       terminalColors = true,      -- define vim.g.terminal_color_{0,17}
       colors = {},
       overrides = {},
-      theme = "light"           -- Load "default" theme or the experimental "light" theme
+      theme = "default"           -- Load "default" theme or the experimental "light" theme
   })
 end
 
 
 
 -- set the actual theme
-vim.cmd("colorscheme gruvbox-material")
+--[[ vim.cmd("colorscheme gruvbox-material") ]]
 -- vim.cmd("colorscheme gruvbox-material")
---[[ vim.cmd("colorscheme kanagawa") ]]
+--[[ vim.cmd('set background=light') ]]
+vim.cmd("colorscheme kanagawa")

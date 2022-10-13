@@ -101,6 +101,11 @@ local astro_plugins = {
     end,
   },
 
+  -- Lock buffers to a window -> prevent accidentally opening files inside
+  -- a file-tree or terminal window
+  -- TODO: Auto-setup for neotree
+  ["stevearc/stickybuf.nvim"] = {},
+
   -- Better buffer closing
   ["famiu/bufdelete.nvim"] = { cmd = { "Bdelete", "Bwipeout" } },
 
@@ -605,6 +610,13 @@ local astro_plugins = {
   -- `brew install pandoc`
   -- `npm install -g live-server`
   ["davidgranstrom/nvim-markdown-preview"] = {},
+
+  ["dsych/blanket.nvim"] = {
+    config = function()
+      require "configs.blanket"
+    end,
+  },
+
 }
 
 if astronvim.updater.snapshot then
