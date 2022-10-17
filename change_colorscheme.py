@@ -29,6 +29,10 @@ def read_file(path: str) -> str:
     with open(path, "r") as f:
         return f.read()
 
+def write_file(path: str, content: str):
+    with open(path, "w") as f:
+        f.write(content)
+
 def update_colorscheme(file: str, colorscheme: str):
     return re.sub(r"^vim.cmd\[\[colorscheme .*\]\]\) *$", f"vim.cmd([[colorscheme {colorscheme}]])", file, flags=re.MULTILINE)
 
@@ -36,7 +40,7 @@ def main():
     colorscheme = get_colorscheme()
     file_buffer: str = read_file(colors_file)
     new_buffer: str = update_colorscheme(file_buffer, colorscheme)
-    print(new_buffer)
+    write_file(colors_file, new_buffer)
 
 
 if __name__ == "__main__":
