@@ -33,5 +33,5 @@ end
 --[[ vim.cmd("colorscheme gruvbox-material") ]]
 -- vim.cmd("colorscheme gruvbox-material")
 --[[ vim.cmd('set background=light') ]]
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme gruvbox-material")
 
