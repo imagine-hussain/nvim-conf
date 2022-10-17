@@ -628,6 +628,11 @@ end
 
 local user_plugin_opts = astronvim.user_plugin_opts
 local packer = astronvim.initialize_packer()
+
+packer.init {
+  max_jobs = 5
+}
+
 packer.startup {
   function(use)
     for key, plugin in pairs(user_plugin_opts("plugins.init", astro_plugins)) do
@@ -637,7 +642,7 @@ packer.startup {
       use(plugin)
     end
   end,
-  config = user_plugin_opts("plugins.packer", {
+  config = {
     compile_path = astronvim.default_compile_path,
     display = {
       open_fn = function()
@@ -656,7 +661,8 @@ packer.startup {
     },
     auto_clean = true,
     compile_on_sync = true,
-  }),
+  },
 }
+
 
 astronvim.compiled()
