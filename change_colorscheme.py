@@ -1,15 +1,33 @@
 """
 Keep this in the root of nvim config';
 Otherwise, manually  configure the path to your nvim
-config
+config as `CONFIG_ROOT`
+
+Ensure `COLORS_FILE` is correct path
+
+Usage:
+    python3 recolor.py <colorscheme>
+
 """
 
 import os
 import re
 import sys
 
-config_root: str = os.path.dirname(os.path.abspath(__file__))
-colors_file = os.path.join(config_root, "lua", "configs", "colors.lua")
+CONFIG_ROOT: str = os.path.dirname(os.path.abspath(__file__))
+COLORS_FILE = os.path.join(CONFIG_ROOT, "lua", "configs", "colors.lua")
+
+# Key: colorscheme, Value: aliases
+ALIASES: dict[str, list[str]] = {
+    "gruvbox-material": ["gruvbox", "g", "gruv", "gruvbox-material"],
+    "kanagawa": ["kanagawa", "kg", "k"],
+}
+
+def main():
+    colorscheme = get_colorscheme()
+    file_buffer: str = read_file(COLORS_FILE)
+    new_buffer: str = update_colorscheme(file_buffer, colorscheme)
+    write_file(COLORS_FILE, new_buffer)
 
 def get_colorscheme() -> str:
     try:
@@ -24,30 +42,27 @@ def get_colorscheme() -> str:
         exit_no_colorscheme()
 
     # Update aliases
-    if colorscheme in ["gruvbox", "g", "gruv"]:
-        colorscheme = "gruvbox-material"
-    elif colorscheme in ["kanagawa", "kg", "k"]:
-        colorscheme = "kanagawa"
+    post_alias_colorscheme: str | None = process_aliases(colorscheme)
 
-    else:
-        # Remove this to allow any colorscheme
-        print(f"""
-    Only allowing supported colorschemes;
-    To change this, edit {__file__} lines 33-35 or,
-    provide a supported colorscheme
+    if post_alias_colorscheme is None:
+        exit_invalid_colorscheme(colorscheme)
 
-    You provided: {colorscheme}
-    """)
-        sys.exit(1)
+    final_colorscheme: str = post_alias_colorscheme or colorscheme
+    print(f"Found colorscheme: {final_colorscheme}")
+    return final_colorscheme
 
-    print("Changing colorscheme to", colorscheme)
-    return colorscheme
+def update_colorscheme(file: str, colorscheme: str):
+    return re.sub(
+        r"^vim.cmd\(\[\[colorscheme.*\]\]\)$", # find current colorscheme
+        f"vim.cmd([[colorscheme {colorscheme}]])", # replace with given colorscheme
+        file,
+        flags=re.MULTILINE
+    )
 
-
-def exit_no_colorscheme():
-    print("No colorscheme provided")
-    print("Correct usage: python3 change_colorscheme.py <colorscheme>")
-    sys.exit(1)
+def process_aliases(source: str):
+    for colorscheme, aliases in ALIASES.items():
+        if source in aliases or source == colorscheme:
+            return colorscheme
 
 def read_file(path: str) -> str:
     with open(path, "r") as f:
@@ -57,19 +72,20 @@ def write_file(path: str, content: str):
     with open(path, "w") as f:
         f.write(content)
 
-def update_colorscheme(file: str, colorscheme: str):
-    r: str = re.sub(r"^vim.cmd\[\[colorscheme .*\]\]\) *$", f"vim.cmd([[colorscheme {colorscheme}]])", file, flags=re.MULTILINE)
-    if r == file:
-        print("No changes made")
-    return r
+def exit_no_colorscheme():
+    print("No colorscheme provided")
+    print("Correct usage: python3 recolor.py <colorscheme>")
+    sys.exit(1)
 
-def main():
-    colorscheme = get_colorscheme()
-    file_buffer: str = read_file(colors_file)
-    new_buffer: str = update_colorscheme(file_buffer, colorscheme)
-    write_file(colors_file, new_buffer)
+def exit_invalid_colorscheme(colorscheme: str):
+    print(f"""
+    Only allowing supported colorschemes;
+    To change this, edit {__file__} lines 33-35 or,
+    provide a supported colorscheme
 
+    You provided: {colorscheme}
+    """)
+    sys.exit(1)
 
 if __name__ == "__main__":
     main()
-
