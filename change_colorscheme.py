@@ -44,6 +44,7 @@ def get_colorscheme() -> str:
     # Update aliases
     post_alias_colorscheme: str | None = process_aliases(colorscheme)
 
+    # Remove this statement to verifying colorschemes (Not Recommended)
     if post_alias_colorscheme is None:
         exit_invalid_colorscheme(colorscheme)
 
@@ -61,7 +62,7 @@ def update_colorscheme(file: str, colorscheme: str):
 
 def process_aliases(source: str):
     for colorscheme, aliases in ALIASES.items():
-        if source in aliases or source == colorscheme:
+        if source in [colorscheme, *aliases]:
             return colorscheme
 
 def read_file(path: str) -> str:
@@ -80,7 +81,7 @@ def exit_no_colorscheme():
 def exit_invalid_colorscheme(colorscheme: str):
     print(f"""
     Only allowing supported colorschemes;
-    To change this, edit {__file__} lines 33-35 or,
+    To change this, edit {__file__} inside ~line 50 or,
     provide a supported colorscheme
 
     You provided: {colorscheme}
@@ -89,3 +90,4 @@ def exit_invalid_colorscheme(colorscheme: str):
 
 if __name__ == "__main__":
     main()
+
