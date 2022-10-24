@@ -312,9 +312,6 @@ local astro_plugins = {
     after = { "nvim-dap", "debugpy" },
   },
 
-
-
-
   -- -- Conceal for tex
   -- ["KeitaNakamura/tex-conceal.vim"] = {
   --   config = function()
