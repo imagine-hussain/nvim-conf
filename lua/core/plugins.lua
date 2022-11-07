@@ -55,6 +55,10 @@ local astro_plugins = {
     end,
   },
 
+  -- Multi-cursor
+  ["mg979/vim-visual-multi"] = {
+
+  },
   -- NEEDS: Nvim 0.8
   -- Noice: Nice, Noise, Notice: UI replace for messages, cmdline, popupmenu
   -- ["folke/noice.nvim"] = {
@@ -457,14 +461,6 @@ local astro_plugins = {
     event = { "BufRead", "BufNewFile"},
     config = function()
       require "configs.neoscroll"
-    end,
-  },
-
-  -- Smooth escaping
-  ["max397574/better-escape.nvim"] = {
-    event = "InsertCharPre",
-    config = function()
-      require "configs.better_escape"
     end,
   },
 

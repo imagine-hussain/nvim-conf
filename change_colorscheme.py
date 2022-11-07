@@ -17,6 +17,9 @@ import sys
 CONFIG_ROOT: str = os.path.dirname(os.path.abspath(__file__))
 COLORS_FILE = os.path.join(CONFIG_ROOT, "lua", "configs", "colors.lua")
 
+print("Root: ", CONFIG_ROOT)
+print("Root: ", COLORS_FILE)
+
 # Key: colorscheme, Value: aliases
 ALIASES: dict[str, list[str]] = {
     "gruvbox-material": ["gruvbox", "g", "gruv", "gruvbox-material"],
@@ -54,7 +57,7 @@ def get_colorscheme() -> str:
 
 def update_colorscheme(file: str, colorscheme: str):
     return re.sub(
-        r"^vim.cmd\(\[\[colorscheme.*\]\]\)$", # find current colorscheme
+        r"^[ ]*vim.cmd\(\[\[colorscheme.*\]\]\)$", # find current colorscheme
         f"vim.cmd([[colorscheme {colorscheme}]])", # replace with given colorscheme
         file,
         flags=re.MULTILINE

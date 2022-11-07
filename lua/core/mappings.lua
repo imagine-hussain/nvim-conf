@@ -464,11 +464,19 @@ maps.v[">"] = { ">gv", desc = "indent line" }
 
 -- Improved Terminal Mappings
 maps.t["<esc>"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
-maps.t["jk"] = { "<C-\\><C-n>", desc = "Terminal normal mode" }
 maps.t["<C-h>"] = { "<c-\\><c-n><c-w>h", desc = "Terminal left window navigation" }
 maps.t["<C-j>"] = { "<c-\\><c-n><c-w>j", desc = "Terminal down window navigation" }
 maps.t["<C-k>"] = { "<c-\\><c-n><c-w>k", desc = "Terminal up window navigation" }
 maps.t["<C-l>"] = { "<c-\\><c-n><c-w>l", desc = "Terminal right window naviation" }
+
+-- Insert Space on Both Sides of Cursor.
+-- E.g: {|} -> { | }
+maps.i["<S-Space>"] = { "<Space><Left><Space>" }
+-- Better than <Delete> key
+maps.i["<S-BS>"] = { "<Del>" }
+vim.cmd[[set t_TI= t_TE=]]
+-- Delete the whole line before the cursor
+maps.i["<C-BS>"] = { "<c-o>d0" }
 
 astronvim.set_mappings(astronvim.user_plugin_opts("mappings", maps))
 
