@@ -5,6 +5,7 @@ local silenced = {
   "Client 1 quit with exit code 1 and signal 0", -- Why is java lsp trying to attach to .py files?
   "Error running config for nvim%-jdtls: /Users/hussainnawaz/", -- Bad JDTLS config
   "message with no corresponding", -- `end` with no `start`- -- java
+  "you no longer need to call this function", -- deprecated `aerial.on_attach`
 }
 
 if status_ok then
