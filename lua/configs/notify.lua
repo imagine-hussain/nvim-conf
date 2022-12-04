@@ -6,6 +6,8 @@ local silenced = {
   "Error running config for nvim%-jdtls: /Users/hussainnawaz/", -- Bad JDTLS config
   "message with no corresponding", -- `end` with no `start`- -- java
   "you no longer need to call this function", -- deprecated `aerial.on_attach`
+  "please remove the mapping", -- whichkey silent maps
+  "deprecated for Neovim", -- For aerial nvim 0.8 update
 }
 
 if status_ok then

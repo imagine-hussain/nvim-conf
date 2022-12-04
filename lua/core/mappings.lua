@@ -45,7 +45,8 @@ if is_available "alpha-nvim" then
 end
 
 -- Bufdelete
-if is_available "bufdelete.nvim" then
+-- todo: update when moving to nvim 0.8
+if is_available "bufdelete.nvim" and false then
   maps.n["<leader>c"] = { "<cmd>Bdelete<cr>", desc = "Close window" }
 else
   maps.n["<leader>c"] = { "<cmd>bdelete<cr>", desc = "Close window" }
@@ -274,6 +275,12 @@ if is_available "telescope.nvim" then
     desc = "Search files",
   }
   maps.n["<c-p>"] = {
+    function()
+      require("telescope.builtin").find_files()
+    end,
+    desc = "Search files",
+  }
+  maps.n["<M-p>"] = {
     function()
       require("telescope.builtin").find_files()
     end,

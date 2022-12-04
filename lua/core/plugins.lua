@@ -252,8 +252,9 @@ local astro_plugins = {
 
   -- LSP symbols
   ["stevearc/aerial.nvim"] = {
-    -- module = "aerial",
-    -- cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
+    module = "aerial",
+    cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
+    commit = "56282c9",
     config = function()
       require "configs.aerial"
     end,
@@ -317,20 +318,20 @@ local astro_plugins = {
   },
 
   -- -- Conceal for tex
-  -- ["KeitaNakamura/tex-conceal.vim"] = {
-  --   config = function()
-  --     require "configs.tex-conceal"
-  --   end,
-  -- },
+  ["KeitaNakamura/tex-conceal.vim"] = {
+    config = function()
+      require "configs.tex-conceal"
+    end,
+  },
   -- Vimtex - Dependency for tex.snippets
-  -- ["lervag/vimtex"] = {
-  --   module = "vimtex",
-  --   event = "VimEnter",
-  --   tag = "v1.6",
-  --   config = function()
-  --     require "configs.vimtex"
-  --   end,
-  -- },
+  ["lervag/vimtex"] = {
+    module = "vimtex",
+    event = "VimEnter",
+    tag = "v1.6",
+    config = function()
+      require "configs.vimtex"
+    end,
+  },
 
   -- UltiSnips
   ["SirVer/ultisnips"] = {
@@ -427,12 +428,12 @@ local astro_plugins = {
     end,
   },
 
-  -- ["SirVer/ultisnips"] = {
-  --   event = { "BufRead", "BufNewFile", "BufWritePost" },
-  --   config = function ()
-  --     require
-  --   end,
-  -- },
+  --[[ ["SirVer/ultisnips"] = { ]]
+  --[[   event = { "BufRead", "BufNewFile", "BufWritePost" }, ]]
+  --[[   config = function () ]]
+  --[[     require ]]
+  --[[   end, ]]
+  --[[ }, ]]
 
   -- Indentation
   ["lukas-reineke/indent-blankline.nvim"] = {
@@ -469,6 +470,11 @@ local astro_plugins = {
   --
   ["sainnhe/gruvbox-material"] = {
     config = function()
+      require "configs.colors"
+    end,
+  },
+  ["sainnhe/sonokai"] = {
+    config = function ()
       require "configs.colors"
     end,
   },

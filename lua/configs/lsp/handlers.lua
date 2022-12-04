@@ -36,6 +36,13 @@ astronvim.lsp.on_attach = function(client, bufnr)
           desc = "LSP code action",
           buffer = bufnr,
         },
+        --[[ ["<M-.>"] = { ]]
+        --[[   function() ]]
+        --[[     vim.lsp.buf.code_action() ]]
+        --[[   end, ]]
+        --[[   desc = "LSP code action", ]]
+        --[[   buffer = bufnr, ]]
+        --[[ }, ]]
         ["<leader>lf"] = {
           function()
             vim.lsp.buf.formatting_sync()
@@ -100,6 +107,20 @@ astronvim.lsp.on_attach = function(client, bufnr)
           buffer = bufnr,
         },
         ["]d"] = {
+          function()
+            vim.diagnostic.goto_next()
+          end,
+          desc = "Next diagnostic",
+          buffer = bufnr,
+        },
+        ["<leader>lp"] = {
+          function()
+            vim.diagnostic.goto_prev()
+          end,
+          desc = "Previous diagnostic",
+          buffer = bufnr,
+        },
+        ["<leader>ln"] = {
           function()
             vim.diagnostic.goto_next()
           end,
