@@ -150,6 +150,7 @@ local astro_plugins = {
   -- Syntax highlighting
   ["nvim-treesitter/nvim-treesitter"] = {
     run = ":TSUpdate",
+    commit = "4cccb6f",
     event = { "BufRead", "BufNewFile" },
     cmd = {
       "TSInstall",
@@ -629,7 +630,7 @@ local user_plugin_opts = astronvim.user_plugin_opts
 local packer = astronvim.initialize_packer()
 
 packer.init {
-  max_jobs = 5
+  max_jobs = 8
 }
 
 packer.startup {
