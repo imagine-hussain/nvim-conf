@@ -198,6 +198,13 @@ local astro_plugins = {
     end,
   },
 
+  -- Used for inlay hints
+  ["nvim-lua/lsp_extensions.nvim"] = {
+    config = function ()
+      require "configs.lsp_extensions"
+    end,
+  },
+
   -- Completion Source for UltiSnips
   -- ["git@github.com:quangnguyen30192/cmp-nvim-ultisnips.git"] = {
   --   event = "InsertEnter",
