@@ -637,7 +637,7 @@ local user_plugin_opts = astronvim.user_plugin_opts
 local packer = astronvim.initialize_packer()
 
 packer.init {
-  max_jobs = 8
+  max_jobs = 24
 }
 
 packer.startup {

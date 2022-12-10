@@ -18,6 +18,7 @@ maps.n["<leader>u"] = {
 maps.n["<leader>fn"] = { "<cmd>enew<cr>", desc = "New File" }
 maps.n["gx"] = {
   function()
+    -- todo
     astronvim.url_opener()
   end,
   desc = "Open the file under cursor with system app",
