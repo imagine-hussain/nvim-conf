@@ -4,8 +4,9 @@ vim.cmd("let g:leetcode_browser='chrome'")
 
 
 -- Preferred Filetype - Default 'cpp'
+-- Is set in `options.lua`
 -- Supports: 'cpp', 'java', 'python', 'python3', 'csharp', 'javascript', 'ruby', 'swift', 'golang', 'scala', 'kotlin', 'rust
--- vim.cmd("let g:leetcode_solution_filetype='cpp'")
+--[[ vim.cmd("let g:leetcode_solution_filetype='cpp'") ]]
 
 
 -- Default: 0
