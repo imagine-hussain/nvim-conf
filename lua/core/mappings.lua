@@ -251,6 +251,12 @@ if is_available "telescope.nvim" then
     end,
     desc = "Search words in all files",
   }
+  maps.n["<leader>fr"] = {
+    function()
+      require("telescope.builtin").resume()
+    end,
+    desc = "Resume Last Search",
+  }
   maps.n["<leader>gt"] = {
     function()
       require("telescope.builtin").git_status()
