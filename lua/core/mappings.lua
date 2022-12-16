@@ -191,27 +191,26 @@ if is_available "smart-splits.nvim" then
   --   end,
   --   desc = "Move to right split",
   -- }
-
-  -- Resize with arrows
-  maps.n["<C-Up>"] = {
+  -- Resize with ctrl + shift + arrow
+  maps.n["<C-S-Up>"] = {
     function()
       require("smart-splits").resize_up()
     end,
     desc = "Resize split up",
   }
-  maps.n["<C-Down>"] = {
+  maps.n["<C-S-Down>"] = {
     function()
       require("smart-splits").resize_down()
     end,
     desc = "Resize split down",
   }
-  maps.n["<C-Left>"] = {
+  maps.n["<C-S-Left>"] = {
     function()
       require("smart-splits").resize_left()
     end,
     desc = "Resize split left",
   }
-  maps.n["<C-Right>"] = {
+  maps.n["<C-S-Right>"] = {
     function()
       require("smart-splits").resize_right()
     end,
