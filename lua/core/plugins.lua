@@ -476,72 +476,22 @@ local astro_plugins = {
   --
   -- Colorschemes
   --
-  ["sainnhe/gruvbox-material"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
-  ["sainnhe/sonokai"] = {
-    config = function ()
-      require "configs.colors"
-    end,
-  },
+  -- No config function. `colors.lua` called by `init.lua`
+  ["sainnhe/gruvbox-material"] = {},
+  ["sainnhe/sonokai"] = {},
   ["projekt0n/github-nvim-theme"] = {
-    config = function()
-      require "configs.colors"
-    end,
   },
-  ["mangeshrex/everblush.vim"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
+  ["mangeshrex/everblush.vim"] = {},
   -- Previously vim-gabriel
-  ["gantoreno/vim-startrail"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
-  ["arzg/vim-substrata"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
-  ["https://gitlab.com/exorcist365/salvation-vim"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
-  ["sainnhe/everforest"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
-  ["folke/tokyonight.nvim"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
-  ["cocopon/iceberg.vim"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
-  ["arcticicestudio/nord-vim"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
-  ["Everblush/everblush.nvim"] = {
-    config = function()
-      require "configs.colors"
-    end,
-  },
-  ["rebelot/kanagawa.nvim"] = {
-    config = function ()
-      require "configs.colors"
-    end,
-  },
+  ["gantoreno/vim-startrail"] = {},
+  ["arzg/vim-substrata"] = {},
+  ["https://gitlab.com/exorcist365/salvation-vim"] = {},
+  ["sainnhe/everforest"] = {},
+  ["folke/tokyonight.nvim"] = {},
+  ["cocopon/iceberg.vim"] = {},
+  ["arcticicestudio/nord-vim"] = {},
+  ["Everblush/everblush.nvim"] = {},
+  ["rebelot/kanagawa.nvim"] = {},
   -- end-colorschemes
 
   -- Get extra JSON schemas

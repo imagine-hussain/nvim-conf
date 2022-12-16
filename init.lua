@@ -11,6 +11,7 @@ for _, source in ipairs {
   "core.mappings",
   "core.ui",
   "configs.which-key-register",
+  "configs.colors"
 } do
   local status_ok, fault = pcall(require, source)
   if not status_ok then
