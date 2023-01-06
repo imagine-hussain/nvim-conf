@@ -20,6 +20,13 @@ local astro_plugins = {
   },
   --[[ ["tpope/vim-sleuth"] = {}, ]]
 
+  -- color col
+  ["xiyaowong/virtcolumn.nvim"] = {
+    config = function()
+      require "configs.virtcolumn"
+    end,
+  },
+
   -- Strip whitespace when editing
   ["lewis6991/spaceless.nvim"] = {
     config = function ()
@@ -59,6 +66,24 @@ local astro_plugins = {
   ["mg979/vim-visual-multi"] = {
 
   },
+
+  ["junegunn/vim-easy-align"] = {
+
+  },
+
+  -- Floating cmd line for Ex commands
+  -- ["VonHeikemen/fine-cmdline.nvim"] = {
+  --   requires = {
+  --     {'MunifTanjim/nui.nvim'}
+  --   },
+  --   cmd = "FineCmdline",
+  --   config = function ()
+  --     -- rebind `:` to FineCmdline
+  --     --[[ vim.api.nvim_set_keymap('n', '<leader><leader>', '<cmd>FineCmdline<CR>', {noremap = true}) ]]
+  --     --[[ <cmd>FineCmdline vimgrep <CR> ]]
+  --   end
+  -- },
+
   -- NEEDS: Nvim 0.8
   -- Noice: Nice, Noise, Notice: UI replace for messages, cmdline, popupmenu
   -- ["folke/noice.nvim"] = {
