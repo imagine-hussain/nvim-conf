@@ -90,6 +90,10 @@ if status_ok then
         },
       },
     },
+    cache_picker = {
+      num_pickers = 10,
+      limit_entries = 1000,
+    },
     pickers = {},
     extensions = {},
   }))

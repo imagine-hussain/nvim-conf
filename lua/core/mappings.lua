@@ -256,6 +256,12 @@ if is_available "telescope.nvim" then
     end,
     desc = "Resume Last Search",
   }
+  maps.n["<leader>fR"] = {
+    function()
+      require("telescope.builtin").pickers()
+    end,
+    desc = "Search old pickers",
+  }
   maps.n["<leader>gt"] = {
     function()
       require("telescope.builtin").git_status()
@@ -279,6 +285,12 @@ if is_available "telescope.nvim" then
       require("telescope.builtin").find_files()
     end,
     desc = "Search files",
+  }
+  maps.n["<leader>fH"] = {
+    function()
+      require("telescope.builtin").command_history()
+    end,
+    desc = "Search command history",
   }
   maps.n["<c-p>"] = {
     function()

@@ -17,6 +17,7 @@ if status_ok then
     s = "Search",
     S = "Session",
     t = "Terminal",
+    r = "Refactor",
   }
 
   local function init_table(mode, prefix, idx)
@@ -41,6 +42,10 @@ if status_ok then
   if is_available "telescope.nvim" then
     init_table("n", "<leader>", "s")
     init_table("n", "<leader>", "g")
+  end
+
+  if is_available "refactoring.nvim" then
+    init_table("n", "<leader>", "r")
   end
 
   mappings = user_plugin_opts("which-key.register_mappings", mappings)

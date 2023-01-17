@@ -19,6 +19,6 @@ for _, source in ipairs {
   end
 end
 
--- vim.cmd[[set guicursor=]]
+vim.cmd[[set guicursor=]]
 
 astronvim.conditional_func(astronvim.user_plugin_opts("polish", nil, false))

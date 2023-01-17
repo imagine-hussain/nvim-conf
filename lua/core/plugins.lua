@@ -223,6 +223,19 @@ local astro_plugins = {
     end,
   },
 
+  -- Refactoring
+  -- 'If I use an environment that has good automated refactorings, I can trust
+  -- those refactorings' - Martin Fowler
+  ["ThePrimeagen/refactoring.nvim"] = {
+    config = function ()
+      require "configs.refactoring"
+    end,
+    requires = {
+      {"nvim-lua/plenary.nvim"},
+      {"nvim-treesitter/nvim-treesitter"}
+    }
+  },
+
   -- Used for inlay hints
   ["nvim-lua/lsp_extensions.nvim"] = {
     config = function ()
@@ -504,8 +517,7 @@ local astro_plugins = {
   -- No config function. `colors.lua` called by `init.lua`
   ["sainnhe/gruvbox-material"] = {},
   ["sainnhe/sonokai"] = {},
-  ["projekt0n/github-nvim-theme"] = {
-  },
+  ["projekt0n/github-nvim-theme"] = {},
   ["mangeshrex/everblush.vim"] = {},
   -- Previously vim-gabriel
   ["gantoreno/vim-startrail"] = {},
@@ -517,6 +529,8 @@ local astro_plugins = {
   ["arcticicestudio/nord-vim"] = {},
   ["Everblush/everblush.nvim"] = {},
   ["rebelot/kanagawa.nvim"] = {},
+  ["https://gitlab.com/__tpb/monokai-pro.nvim"] = {},
+  ["Shatur/neovim-ayu"] = {},
   -- end-colorschemes
 
   -- Get extra JSON schemas
@@ -612,6 +626,7 @@ local user_plugin_opts = astronvim.user_plugin_opts
 local packer = astronvim.initialize_packer()
 
 packer.init {
+  -- note to self: anything abt ~50 can start to thrash sometimes
   max_jobs = 24
 }
 

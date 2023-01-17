@@ -27,12 +27,11 @@ if kanagawa_ok then
   })
 end
 
-
+vim.cmd[[let g:monokaipro_filter = 'machine']]
 
 -- set the actual theme
 --[[ vim.cmd("colorscheme gruvbox-material") ]]
 -- vim.cmd("colorscheme gruvbox-material")
 --[[ vim.cmd('set background=light') ]]
---[[ vim.cmd("colorscheme gruvbox-material") ]]
 vim.cmd([[colorscheme gruvbox-material]])
 

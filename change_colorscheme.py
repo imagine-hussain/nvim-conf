@@ -22,12 +22,21 @@ print("Root: ", COLORS_FILE)
 
 # Key: colorscheme, Value: aliases
 ALIASES: dict[str, list[str]] = {
+    "default": ["default", "d", "def"],
     "gruvbox-material": ["gruvbox", "g", "gruv", "gruvbox-material"],
     "kanagawa": ["kanagawa", "kg", "k"],
+    "github": ["github", "gh"],
+    "substrata": ["substrata", "sub"],
+    "salvation": ["salvation", "salv"],
+    "tokyonight": ["tokyonight", "tokyo", "tn"],
+    "tokyonight-moon": ["tokyonight-moon", "tn-moon"],
+    "iceberg": ["iceberg", "ice"],
+    "nord": ["nord"],
+    "ayu": ["ayu"],
 }
 
 def main():
-    colorscheme = get_colorscheme()
+    colorscheme: str = get_colorscheme()
     file_buffer: str = read_file(COLORS_FILE)
     new_buffer: str = update_colorscheme(file_buffer, colorscheme)
     write_file(COLORS_FILE, new_buffer)
