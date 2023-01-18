@@ -5,9 +5,9 @@ if status_ok then
   local provider = require("core.status").provider
   local conditional = require("core.status").conditional
   -- stylua: ignore
-  feline.setup(astronvim.user_plugin_opts("plugins.feline", {
+  feline.setup {
     disable = { filetypes = { "^NvimTree$", "^neo%-tree$", "^dashboard$", "^Outline$", "^aerial$" } },
-    theme = hl.group("StatusLine", { fg = C.fg, bg = C.bg_1 }),
+    --[[ theme = hl.group("StatusLine", { fg = C.fg, bg = C.bg_1 }), ]]
     components = {
       active = {
         {
@@ -26,6 +26,7 @@ if status_ok then
           { provider = "diagnostic_info", hl = hl.fg("DiagnosticInfo", { fg = C.white_2 }), icon = "  " },
           { provider = "diagnostic_hints", hl = hl.fg("DiagnosticHint", { fg = C.yellow_1 }), icon = "  " },
         },
+
         {
           { provider = provider.lsp_progress, enabled = conditional.bar_width() },
           { provider = provider.lsp_client_names(true), short_provider = provider.lsp_client_names(), enabled = conditional.bar_width(), icon = "   " },
@@ -42,5 +43,5 @@ if status_ok then
         },
       },
     },
-  }))
+  }
 end

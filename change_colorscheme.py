@@ -13,6 +13,7 @@ Usage:
 import os
 import re
 import sys
+import json
 
 CONFIG_ROOT: str = os.path.dirname(os.path.abspath(__file__))
 COLORS_FILE = os.path.join(CONFIG_ROOT, "lua", "configs", "colors.lua")
@@ -31,6 +32,8 @@ ALIASES: dict[str, list[str]] = {
     "tokyonight": ["tokyonight", "tokyo", "tn"],
     "tokyonight-moon": ["tokyonight-moon", "tn-moon"],
     "iceberg": ["iceberg", "ice"],
+    "monokai-pro": ["monokai-pro", "monokai"],
+    "sonokai": ["sonokai"],
     "nord": ["nord"],
     "ayu": ["ayu"],
 }
@@ -52,6 +55,11 @@ def get_colorscheme() -> str:
 
     if not colorscheme:
         exit_no_colorscheme()
+
+    # this should really be part of a command parser instead
+    if colorscheme == "list":
+        print_aliases()
+        exit(0)
 
     # Update aliases
     post_alias_colorscheme: str | None = process_aliases(colorscheme)
@@ -99,6 +107,13 @@ def exit_invalid_colorscheme(colorscheme: str):
     You provided: {colorscheme}
     """)
     sys.exit(1)
+
+def print_aliases():
+    print("Aliases List:")
+    align_col: int = max(len(k) for k in ALIASES.keys())
+    for colorscheme, aliases in ALIASES.items():
+        alignment_buffer = " " * (align_col - len(colorscheme) + 4 )
+        print(f"{colorscheme}:{alignment_buffer}{', '.join(aliases)}")
 
 if __name__ == "__main__":
     main()

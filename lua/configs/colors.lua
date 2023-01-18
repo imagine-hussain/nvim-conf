@@ -27,11 +27,18 @@ if kanagawa_ok then
   })
 end
 
-vim.cmd[[let g:monokaipro_filter = 'machine']]
+-- Sonokai
+vim.cmd[[let g:monokaipro_filter = 'espresso']]
+-- vim.cmd[[let g:monokaipro_filter = 'machine']]
+-- vim.cmd[[let g:monokaipro_filter = 'default']]
+-- vim.cmd[[let g:monokaipro_filter = 'atlantis']]
+-- vim.cmd[[let g:monokaipro_filter = 'andromeda']] -- noice
+-- vim.cmd[[let g:monokaipro_filter = 'shusia']] -- mid
+-- vim.cmd[[let g:monokaipro_filter = 'maia']]
 
 -- set the actual theme
 --[[ vim.cmd("colorscheme gruvbox-material") ]]
 -- vim.cmd("colorscheme gruvbox-material")
 --[[ vim.cmd('set background=light') ]]
-vim.cmd([[colorscheme gruvbox-material]])
+vim.cmd([[colorscheme kanagawa]])
 

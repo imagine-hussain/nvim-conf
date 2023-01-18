@@ -528,8 +528,11 @@ local astro_plugins = {
   ["cocopon/iceberg.vim"] = {},
   ["arcticicestudio/nord-vim"] = {},
   ["Everblush/everblush.nvim"] = {},
-  ["rebelot/kanagawa.nvim"] = {},
+  ["rebelot/kanagawa.nvim"] = {
+    commit = 'fc2e308', -- last commit to work without nvim 0.8
+  },
   ["https://gitlab.com/__tpb/monokai-pro.nvim"] = {},
+  ["sainnhe/sonokai.git"] = {},
   ["Shatur/neovim-ayu"] = {},
   -- end-colorschemes
 
