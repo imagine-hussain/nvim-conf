@@ -29,6 +29,7 @@ local astro_plugins = {
 
   -- Strip whitespace when editing
   ["lewis6991/spaceless.nvim"] = {
+    commit = "4012c778cf8973379cc4e7e52d2260b15d390462",
     config = function ()
       require "spaceless".setup()
     end
@@ -532,8 +533,8 @@ local astro_plugins = {
     commit = 'fc2e308', -- last commit to work without nvim 0.8
   },
   ["https://gitlab.com/__tpb/monokai-pro.nvim"] = {},
-  ["sainnhe/sonokai.git"] = {},
-  ["Shatur/neovim-ayu"] = {},
+  --[[ ["Shatur/neovim-ayu"] = {}, ]]
+  ["Luxed/ayu-vim"] = {},
   -- end-colorschemes
 
   -- Get extra JSON schemas

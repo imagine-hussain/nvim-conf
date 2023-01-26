@@ -27,6 +27,15 @@ if kanagawa_ok then
   })
 end
 
+local ayu_ok, _ = pcall(require, 'ayu')
+if ayu_ok then
+  vim.cmd[[set background=dark]]
+  vim.cmd[[let g:ayucolor="mirage"]] -- for mirage version of theme
+  vim.cmd[[let g:ayu_italic_comment = 1]] -- defaults to 0.
+  vim.cmd[[let g:ayu_sign_contrast = 1]] -- " defaults to 0. If set to 1, SignColumn and FoldColumn will have a higher contrast instead of using the Normal background
+  vim.cmd[[let g:ayu_extended_palette = 1]] -- " defaults to 0. If set to 1, enables extended palette. Adds more colors to some highlights (function keyword, loops, conditionals, imports)
+end
+
 -- Sonokai
 vim.cmd[[let g:monokaipro_filter = 'espresso']]
 -- vim.cmd[[let g:monokaipro_filter = 'machine']]
@@ -40,5 +49,5 @@ vim.cmd[[let g:monokaipro_filter = 'espresso']]
 --[[ vim.cmd("colorscheme gruvbox-material") ]]
 -- vim.cmd("colorscheme gruvbox-material")
 --[[ vim.cmd('set background=light') ]]
-vim.cmd([[colorscheme kanagawa]])
+vim.cmd([[colorscheme monokai-pro]])
 
