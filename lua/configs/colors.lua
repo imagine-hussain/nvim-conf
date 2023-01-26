@@ -49,5 +49,5 @@ vim.cmd[[let g:monokaipro_filter = 'espresso']]
 --[[ vim.cmd("colorscheme gruvbox-material") ]]
 -- vim.cmd("colorscheme gruvbox-material")
 --[[ vim.cmd('set background=light') ]]
-vim.cmd([[colorscheme monokai-pro]])
+vim.cmd([[colorscheme gruvbox-material]])
 
