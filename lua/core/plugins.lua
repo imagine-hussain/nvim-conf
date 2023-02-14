@@ -289,6 +289,12 @@ local astro_plugins = {
   ["neovim/nvim-lspconfig"] = { event = "VimEnter" },
 
   -- LSP manager
+  ["git@github.com:williamboman/mason.nvim.git"] = {
+    after = "nvim-lspconfig",
+    config = function ()
+      require "configs.mason"
+    end
+  },
   ["williamboman/nvim-lsp-installer"] = {
     after = "nvim-lspconfig",
     config = function()

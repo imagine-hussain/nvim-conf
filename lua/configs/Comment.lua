@@ -1,7 +1,7 @@
 local status_ok, Comment = pcall(require, "Comment")
 if status_ok then
   local utils = require "Comment.utils"
-  Comment.setup(astronvim.user_plugin_opts("plugins.Comment", {
+  Comment.setup {
     pre_hook = function(ctx)
       local location = nil
       if ctx.ctype == utils.ctype.block then
@@ -15,5 +15,5 @@ if status_ok then
         location = location,
       }
     end,
-  }))
+  }
 end

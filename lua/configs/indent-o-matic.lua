@@ -23,6 +23,8 @@ if status_ok then
 
     filetype_jsx = { 2 },
 
+    filetype_html = { 2, 4 },
+
     --[[ filetype_out = { ]]
     --[[   -- Don't try to add indentation ]]
     --[[   max_lines = 0, ]]

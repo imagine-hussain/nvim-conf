@@ -1,6 +1,6 @@
 local status_ok, icons = pcall(require, "nvim-web-devicons")
 if status_ok then
-  icons.set_icon(astronvim.user_plugin_opts("plugins.nvim-web-devicons", {
+  icons.set_icon {
     deb = { icon = "", name = "Deb" },
     lock = { icon = "", name = "Lock" },
     mp3 = { icon = "", name = "Mp3" },
@@ -13,5 +13,5 @@ if status_ok then
     woff2 = { icon = "", name = "WebOpenFontFormat2" },
     xz = { icon = "", name = "Xz" },
     zip = { icon = "", name = "Zip" },
-  }))
+  }
 end
