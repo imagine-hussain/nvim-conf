@@ -16,6 +16,7 @@ local settings = {
     ignorecase = true,                       -- Case insensitive searching
     infercase = true,                        -- Infer cases in keyword completion
     laststatus = 3,                          -- globalstatus
+    lazyredraw = true,                       -- lazily redraw
     linebreak = true,                        -- Wrap lines at 'breakat'
     mouse = "a",                             -- Enable mouse support
     number = true,                           -- Show numberline
@@ -23,7 +24,7 @@ local settings = {
     pumheight = 10,                          -- Height of the pop up menu
     relativenumber = true,                   -- Show relative numberline
     scrolloff = 6,                           -- Number of lines to keep above and below the cursor
-    shiftwidth = 2,                          -- Number of space inserted for indentation
+    shiftwidth = 4,                          -- Number of space inserted for indentation
     showmode = false,                        -- Disable showing modes in command line
     showtabline = 2,                         -- always display tabline
     sidescrolloff = 8,                       -- Number of columns to keep at the sides of the cursor
@@ -54,6 +55,14 @@ local settings = {
     diagnostics_mode = 3,                  -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true,                  -- disable icons in the UI (disable if no nerd font is available)
     ui_notifications_enabled = true,       -- disable notifications when toggling UI elements
+    text_flavour = "latex",                -- VimTex text flabour
+    vimtex_compiler_method = 'latexmk',    -- way to compile latex - ['latexrun', 'latexmk']
+    --copilot_node_command = '/usr/local/bin/node', -- alternative node for copilot
+    leetcode_browser = 'chrome',           -- used by LC extension for browser
+    leetcode_solution_filetype = 'cpp',    -- Supports: 'cpp', 'java', 'python', 'python3', 'csharp', 'javascript', 'ruby', 'swift', 'golang', 'scala', 'kotlin', 'rust
   },
   t = { bufs = vim.api.nvim_list_bufs() }, -- initialize buffers for the current tab
 }
+
+-- local colorscheme = "gruvbox-material"
+-- vim.api.nvim_command("colorscheme" .. colorscheme)
