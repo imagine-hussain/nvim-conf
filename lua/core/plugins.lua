@@ -104,13 +104,13 @@ return {
     end,
   },
   -- Statusline
-  {
-    "feline-nvim/feline.nvim",
-    after = "nvim-web-devicons",
-    config = function()
-      require "configs.feline"
-    end,
-  },
+  -- {
+  --   "feline-nvim/feline.nvim",
+  --   after = "nvim-web-devicons",
+  --   config = function()
+  --     require "configs.feline"
+  --   end,
+  -- },
   -- Parenthesis highlighting
   { "p00f/nvim-ts-rainbow",                        after = "nvim-treesitter" },
   -- Autoclose tags
