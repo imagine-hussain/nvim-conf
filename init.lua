@@ -4,6 +4,8 @@ local function load_fail_error(file, err)
   )
 end
 
+_G.utils = require "utils"
+
 local function main()
   for _, source_file in ipairs {
     "core.settings",

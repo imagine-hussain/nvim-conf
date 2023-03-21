@@ -503,4 +503,3 @@ vim.cmd [[set t_TI= t_TE=]]
 maps.i["<C-BS>"] = { "<c-o>d0" }
 
 astronvim.set_mappings(astronvim.user_plugin_opts("mappings", maps))
-

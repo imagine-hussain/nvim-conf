@@ -142,13 +142,12 @@ return {
       require "configs.treesitter"
     end,
   },
-
   --
   --
   -- Lsp and Completions
   --
   -- Snippet collection
-  { "rafamadriz/friendly-snippets", opt = true },
+  { "rafamadriz/friendly-snippets",                opt = true },
   -- Snippet engine - Lua base
   {
     "L3MON4D3/LuaSnip",
@@ -167,19 +166,20 @@ return {
       require "configs.cmp"
     end,
   },
+  -- TODO: FIX
   -- Refactoring
   -- 'If I use an environment that has good automated refactorings, I can trust
   -- those refactorings' - Martin Fowler
-  {
-    "ThePrimeagen/refactoring.nvim",
-    config = function()
-      require "configs.refactoring"
-    end,
-    requires = {
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-treesitter/nvim-treesitter" }
-    }
-  },
+  -- {
+  --   "ThePrimeagen/refactoring.nvim",
+  --   config = function()
+  --     require "configs.refactoring"
+  --   end,
+  --   requires = {
+  --     { "nvim-lua/plenary.nvim" },
+  --     { "nvim-treesitter/nvim-treesitter" }
+  --   }
+  -- },
   -- Used for inlay hints
   -- {
   --   "nvim-lua/lsp_extensions.nvim",
@@ -201,7 +201,10 @@ return {
     "saadparwaiz1/cmp_luasnip",
     after = "nvim-cmp",
     config = function()
-      astronvim.add_user_cmp_source "luasnip"
+      utils.add_cmp_source {
+        name = "luasnip",
+        priority = 750,
+      }
     end,
   },
   -- Buffer completion source
@@ -209,7 +212,10 @@ return {
     "hrsh7th/cmp-buffer",
     after = "nvim-cmp",
     config = function()
-      astronvim.add_user_cmp_source "buffer"
+      utils.add_cmp_source {
+        name = "buffer",
+        priority = 500,
+      }
     end,
   },
   -- Path completion source
@@ -217,7 +223,10 @@ return {
     "hrsh7th/cmp-path",
     after = "nvim-cmp",
     config = function()
-      astronvim.add_user_cmp_source "path"
+      utils.add_cmp_source {
+        name = "path",
+        priority = 250,
+      }
     end,
   },
   -- LSP completion source
@@ -225,92 +234,95 @@ return {
     "hrsh7th/cmp-nvim-lsp",
     after = "nvim-cmp",
     config = function()
-      astronvim.add_user_cmp_source "nvim_lsp"
+      utils.add_cmp_source {
+        name = "nvim_lsp",
+        priority = 1000,
+      }
     end,
   },
-  -- Built-in LSP
-  { "neovim/nvim-lspconfig",        event = "VimEnter" },
-  -- LSP manager
-  {
-    "git@github.com:williamboman/mason.nvim.git",
-    after = "nvim-lspconfig",
-    config = function()
-      require "configs.mason"
-    end
-  },
-  {
-    "williamboman/nvim-lsp-installer",
-    after = "nvim-lspconfig",
-    config = function()
-      require "configs.nvim-lsp-installer"
-      require "configs.lsp"
-    end,
-  },
-  -- LSP symbols
-  {
-    "stevearc/aerial.nvim",
-    module = "aerial",
-    cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
-    commit = "56282c9",
-    config = function()
-      require "configs.aerial"
-    end,
-  },
-  -- Formatting and linting
-  {
-    "jose-elias-alvarez/null-ls.nvim",
-    event = { "BufRead", "BufNewFile" },
-    config = function()
-      require "configs.null-ls"
-    end,
-  },
-  -- Java lsp
-  {
-    "mfussenegger/nvim-jdtls",
-    config = function()
-      require "configs.nvim-jdtls"
-    end,
-  },
-  -- Code runner (mainly for java)
-  {
-    "CRAG666/code_runner.nvim",
-    config = function()
-      require "configs.code-runner"
-    end,
-  },
-  ---
-  --- Debugging
-  ---
-  -- Debugging Protocol
-  { "mfussenegger/nvim-dap", },
-  -- Telescope Integration for Dap
-  { "nvim-telescope/telescope-dap.nvim", after = "nvim-dap", },
-  -- UI for Debugging
-  { "rcarriga/nvim-dap-ui",              after = "nvim-dap", },
-  -- Inline Virtual Text for Debugging
-  { "theHamsta/nvim-dap-virtual-text",   after = "nvim-dap", },
-  -- Debug Server Python
-  -- Dependency for `nvim-dap-python`
-  { "microsoft/debugpy",                 after = "nvim-dap", },
-  -- Debugger for Python
-  { "mfussenegger/nvim-dap-python",      after = { "nvim-dap", "debugpy" }, },
-  -- -- Conceal for tex
-  {
-    "KeitaNakamura/tex-conceal.vim",
-    config = function()
-      require "configs.tex-conceal"
-    end,
-  },
-  -- Vimtex - Dependency for tex.snippets
-  {
-    "lervag/vimtex",
-    module = "vimtex",
-    event = "VimEnter",
-    tag = "v1.6",
-    config = function()
-      require "configs.vimtex"
-    end,
-  },
+  -- -- Built-in LSP
+  -- { "neovim/nvim-lspconfig",        event = "VimEnter" },
+  -- -- LSP manager
+  -- {
+  --   "git@github.com:williamboman/mason.nvim.git",
+  --   after = "nvim-lspconfig",
+  --   config = function()
+  --     require "configs.mason"
+  --   end
+  -- },
+  -- {
+  --   "williamboman/nvim-lsp-installer",
+  --   after = "nvim-lspconfig",
+  --   config = function()
+  --     require "configs.nvim-lsp-installer"
+  --     require "configs.lsp"
+  --   end,
+  -- },
+  -- -- LSP symbols
+  -- {
+  --   "stevearc/aerial.nvim",
+  --   module = "aerial",
+  --   cmd = { "AerialToggle", "AerialOpen", "AerialInfo" },
+  --   commit = "56282c9",
+  --   config = function()
+  --     require "configs.aerial"
+  --   end,
+  -- },
+  -- -- Formatting and linting
+  -- {
+  --   "jose-elias-alvarez/null-ls.nvim",
+  --   event = { "BufRead", "BufNewFile" },
+  --   config = function()
+  --     require "configs.null-ls"
+  --   end,
+  -- },
+  -- -- Java lsp
+  -- {
+  --   "mfussenegger/nvim-jdtls",
+  --   config = function()
+  --     require "configs.nvim-jdtls"
+  --   end,
+  -- },
+  -- -- Code runner (mainly for java)
+  -- {
+  --   "CRAG666/code_runner.nvim",
+  --   config = function()
+  --     require "configs.code-runner"
+  --   end,
+  -- },
+  -- ---
+  -- --- Debugging
+  -- ---
+  -- -- Debugging Protocol
+  -- { "mfussenegger/nvim-dap", },
+  -- -- Telescope Integration for Dap
+  -- { "nvim-telescope/telescope-dap.nvim", after = "nvim-dap", },
+  -- -- UI for Debugging
+  -- { "rcarriga/nvim-dap-ui",              after = "nvim-dap", },
+  -- -- Inline Virtual Text for Debugging
+  -- { "theHamsta/nvim-dap-virtual-text",   after = "nvim-dap", },
+  -- -- Debug Server Python
+  -- -- Dependency for `nvim-dap-python`
+  -- { "microsoft/debugpy",                 after = "nvim-dap", },
+  -- -- Debugger for Python
+  -- { "mfussenegger/nvim-dap-python",      after = { "nvim-dap", "debugpy" }, },
+  -- -- -- Conceal for tex
+  -- {
+  --   "KeitaNakamura/tex-conceal.vim",
+  --   config = function()
+  --     require "configs.tex-conceal"
+  --   end,
+  -- },
+  -- -- Vimtex - Dependency for tex.snippets
+  -- {
+  --   "lervag/vimtex",
+  --   module = "vimtex",
+  --   event = "VimEnter",
+  --   tag = "v1.6",
+  --   config = function()
+  --     require "configs.vimtex"
+  --   end,
+  -- },
   -- UltiSnips
   {
     "SirVer/ultisnips",
@@ -324,6 +336,9 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     cmd = "Telescope",
+    dependencies = {
+      { "nvim-telescope/telescope-fzf-native.nvim", enabled = vim.fn.executable "make" == 1, build = "make" },
+    },
     module = "telescope",
     config = function()
       require "configs.telescope"
@@ -338,42 +353,45 @@ return {
     after = "telescope.nvim",
     --[[ run = vim.fn.has "win32" ~= 1 and "make" or nil, ]]
     config = function()
-      require("telescope") --.load_extension("fzf")
+      local ok, telescope = pcall(require, "telescope")
+      if ok then
+        telescope.load_extension("fzf")
+      end
     end,
   },
   -- Git integration
-  {
-    "lewis6991/gitsigns.nvim",
-    event = "BufEnter",
-    config = function()
-      require "configs.gitsigns"
-    end,
-  },
-  -- Git
-  {
-    "pwntester/octo.nvim",
-    event = "BufEnter",
-    config = function()
-      require "configs.octo"
-    end,
-  },
-  -- Git (for toggle term lazygit)
-  {
-    "jesseduffield/lazygit",
-    event = "BufEnter",
-    config = function()
-      require "configs.lazygit"
-    end,
-  },
-  -- Start screen
-  {
-    "goolord/alpha-nvim",
-    cmd = "Alpha",
-    module = "alpha",
-    config = function()
-      require "configs.alpha"
-    end,
-  },
+  -- {
+  --   "lewis6991/gitsigns.nvim",
+  --   event = "BufEnter",
+  --   config = function()
+  --     require "configs.gitsigns"
+  --   end,
+  -- },
+  -- -- Git
+  -- {
+  --   "pwntester/octo.nvim",
+  --   event = "BufEnter",
+  --   config = function()
+  --     require "configs.octo"
+  --   end,
+  -- },
+  -- -- Git (for toggle term lazygit)
+  -- {
+  --   "jesseduffield/lazygit",
+  --   event = "BufEnter",
+  --   config = function()
+  --     require "configs.lazygit"
+  --   end,
+  -- },
+  -- -- Start screen
+  -- {
+  --   "goolord/alpha-nvim",
+  --   cmd = "Alpha",
+  --   module = "alpha",
+  --   config = function()
+  --     require "configs.alpha"
+  --   end,
+  -- },
   -- Color highlighting
   {
     "norcalli/nvim-colorizer.lua",
