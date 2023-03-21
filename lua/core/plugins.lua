@@ -4,17 +4,14 @@ return {
   { "NMAC427/guess-indent.nvim",     event = "BufEnter",             config = require "configs.guess-indent" },
   { "Shatur/neovim-session-manager", event = "BufWritePost",         cmd = "SessionManager" },
   ["nvim-lua/popup.nvim"] = {},
-  {
-    "xiyaowong/virtcolumn.nvim",
-    config = require "configs.virtcolumn"
-  },
+  -- {
+  --   "xiyaowong/virtcolumn.nvim",
+  --   config = require "configs.virtcolumn"
+  -- },
   -- Strip whitespace when editing
   {
     "lewis6991/spaceless.nvim",
-    commit = "4012c778cf8973379cc4e7e52d2260b15d390462",
-    config = function()
-      require "spaceless".setup()
-    end
+    config = function() require "spaceless".setup() end
   },
   -- Notifications
   {
@@ -64,9 +61,9 @@ return {
   {
     "kyazdani42/nvim-web-devicons",
     event = "VimEnter",
-    config = function()
-      require "configs.icons"
-    end,
+    -- config = function()
+    --   require "configs.icons"
+    -- end,
   },
   -- Give each tab its own scope -- TODO: deprecate
   {
