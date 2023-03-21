@@ -124,25 +124,24 @@ return {
     commit = "4cccb6f",
     event = { "BufRead", "BufNewFile" },
     cmd = {
+      "TSBufDisable",
+      "TSBufEnable",
+      "TSBufToggle",
+      "TSDisable",
+      "TSEnable",
+      "TSToggle",
       "TSInstall",
       "TSInstallInfo",
       "TSInstallSync",
+      "TSModuleInfo",
       "TSUninstall",
       "TSUpdate",
       "TSUpdateSync",
-      "TSDisableAll",
-      "TSEnableAll",
     },
     config = function()
       require "configs.treesitter"
     end,
   },
-  --[[ ["nvim-treesitter/playground"] = { ]]
-  --[[   after = "nvim-treesitter", ]]
-  --[[   config = function () ]]
-  --[[     require "configs.treesitter-playground" ]]
-  --[[   end, ]]
-  --[[ }, ]]
 
   --
   --
